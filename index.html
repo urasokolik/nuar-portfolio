@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Юрий Соколов — разработчик сайтов, Telegram-ботов, автоматизации и мобильных игр.">
+  <meta name="theme-color" content="#101110">
+  <title>Nuar — разработка, которая работает</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Nuar, на главную">
+      <span class="brand-mark">N</span>
+      <span>nuar<span class="brand-dot">.</span>dev</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#work">Проекты</a>
+      <a href="#stack">Стек</a>
+      <a href="#about">Обо мне</a>
+    </nav>
+    <a class="header-contact" href="https://t.me/Nuar010" target="_blank" rel="noreferrer">
+      Написать <span aria-hidden="true">↗</span>
+    </a>
+    <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-pad">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> открыт к новым задачам</p>
+        <h1>Код, который<br><em>двигает вперёд.</em></h1>
+        <p class="hero-lead">Создаю сайты, Telegram-ботов и цифровые продукты, которые превращают идеи в понятный пользовательский опыт и реальные результаты.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Смотреть проекты <span>↓</span></a>
+          <a class="button button-quiet" href="https://t.me/Nuar010" target="_blank" rel="noreferrer">Обсудить задачу <span>↗</span></a>
+        </div>
+        <div class="hero-meta">
+          <span>Юрий Соколов / Nuar</span>
+          <span>Иркутск, RU</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Визуальная панель с примерами работы">
+        <div class="visual-topline"><span>NUAR_SYSTEM / 2026</span><span class="live-label"><i></i> live</span></div>
+        <div class="terminal-window">
+          <div class="terminal-bar"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span><span class="terminal-title">build/product.py</span></div>
+          <div class="terminal-code">
+            <p><b>01</b> <span class="purple">class</span> <span class="blue">Product</span>:</p>
+            <p><b>02</b> &nbsp; <span class="purple">def</span> <span class="yellow">__init__</span>(<span class="orange">self</span>):</p>
+            <p><b>03</b> &nbsp; &nbsp; <span class="orange">self</span>.idea = <span class="green">"your vision"</span></p>
+            <p><b>04</b> &nbsp; &nbsp; <span class="orange">self</span>.logic = <span class="green">"clean"</span></p>
+            <p><b>05</b> &nbsp; &nbsp; <span class="orange">self</span>.result = <span class="blue">ship</span>()</p>
+            <p><b>06</b></p>
+            <p><b>07</b> <span class="comment"># make it useful</span></p>
+            <p><b>08</b> <span class="purple">return</span> <span class="orange">self</span>.result</p>
+          </div>
+          <div class="terminal-pulse"><span></span><span></span><span></span><strong>build successful</strong></div>
+        </div>
+        <div class="visual-note note-one"><span>01</span><strong>idea → product</strong><small>from first line to launch</small></div>
+        <div class="visual-note note-two"><span>02</span><strong>clarity / speed</strong><small>less noise, more value</small></div>
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Специализация">
+      <div class="ticker-track">
+        <span>WEB DEVELOPMENT</span><i>✳</i><span>TELEGRAM BOTS</span><i>✳</i><span>AUTOMATION</span><i>✳</i><span>UNITY / C#</span><i>✳</i><span>WEB DEVELOPMENT</span><i>✳</i><span>TELEGRAM BOTS</span><i>✳</i>
+      </div>
+    </section>
+
+    <section class="work section-pad" id="work">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / избранное</p><h2>Проекты, которыми<br><em>можно гордиться.</em></h2></div>
+        <p class="section-intro">Разные задачи, один принцип: делать сложное понятным, а продукт — живым.</p>
+      </div>
+      <div class="projects-grid">
+        <a class="project-card project-featured" href="https://github.com/urasokolik/revolt-orderfall-showcase" target="_blank" rel="noreferrer">
+          <div class="project-visual game-visual"><span class="card-index">01</span><div class="game-sky"></div><div class="game-sun"></div><div class="game-tower"></div><div class="game-floor"></div><span class="visual-caption">MOBILE / UNITY</span></div>
+          <div class="project-info"><div><p class="project-type">Game development</p><h3>Revolt: Orderfall</h3></div><span class="round-arrow">↗</span><p class="project-description">Мобильная игра с мини-играми, прогрессией сцен и монетизацией через Yandex Mobile Ads.</p><div class="tag-row"><span>Unity</span><span>C#</span><span>Android</span></div></div>
+        </a>
+        <a class="project-card" href="https://github.com/urasokolik/lexify-landing-page" target="_blank" rel="noreferrer">
+          <div class="project-visual lexify-visual"><span class="card-index">02</span><div class="browser-mock"><div class="mock-nav"></div><div class="mock-copy"></div><div class="mock-lines"></div><div class="mock-circle"></div></div><span class="visual-caption">LANDING PAGE</span></div>
+          <div class="project-info"><div><p class="project-type">Web design & development</p><h3>Lexify</h3></div><span class="round-arrow">↗</span><p class="project-description">Адаптивный лендинг для волонтёрской школы английского языка.</p><div class="tag-row"><span>HTML</span><span>CSS</span><span>Responsive</span></div></div>
+        </a>
+        <a class="project-card" href="https://github.com/urasokolik/telegram-opt-in-broadcast-bot" target="_blank" rel="noreferrer">
+          <div class="project-visual bot-visual"><span class="card-index">03</span><div class="bot-window"><div class="bot-head">broadcast<span>●</span></div><div class="bot-message">Рассылка готова<br><small>1 284 получателя</small></div><div class="bot-bar"><i></i><i></i><i></i><i></i></div></div><span class="visual-caption">TELEGRAM / PYTHON</span></div>
+          <div class="project-info"><div><p class="project-type">Automation</p><h3>Broadcast Bot</h3></div><span class="round-arrow">↗</span><p class="project-description">Бот с подпиской, паузой, статусами доставки и хранением данных в SQLite.</p><div class="tag-row"><span>Python</span><span>aiogram</span><span>SQLite</span></div></div>
+        </a>
+        <div class="project-card project-service">
+          <div class="service-visual"><span class="service-plus">+</span><span class="service-label">YOUR<br>NEXT<br>PROJECT</span><span class="service-small">04 / open slot</span></div>
+          <div class="project-info"><div><p class="project-type">Available for collaboration</p><h3>Сделаем ваш?</h3></div><a class="round-arrow" href="https://t.me/Nuar010" target="_blank" rel="noreferrer">↗</a><p class="project-description">Расскажите, что нужно собрать. Я помогу превратить задачу в рабочий продукт.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack section-pad" id="stack">
+      <div class="section-heading stack-heading"><div><p class="eyebrow">02 / инструменты</p><h2>Стек без<br><em>шума.</em></h2></div><p class="section-intro">Выбираю технологии под задачу, а не задачу под модный инструмент.</p></div>
+      <div class="stack-layout"><div class="stack-statement"><span class="quote-mark">“</span><p>Хороший код — это когда следующий шаг очевиден.</p><span class="statement-author">— рабочий принцип</span></div><div class="stack-list">
+        <div class="stack-item"><span class="stack-num">01</span><strong>Python</strong><span>боты · API · автоматизация</span></div>
+        <div class="stack-item"><span class="stack-num">02</span><strong>aiogram</strong><span>Telegram · сценарии · UX</span></div>
+        <div class="stack-item"><span class="stack-num">03</span><strong>HTML / CSS</strong><span>лендинги · адаптив · визуал</span></div>
+        <div class="stack-item"><span class="stack-num">04</span><strong>Unity / C#</strong><span>мобильные игры · Android</span></div>
+        <div class="stack-item"><span class="stack-num">05</span><strong>SQLite / Render</strong><span>данные · деплой · поддержка</span></div>
+      </div></div>
+    </section>
+
+    <section class="about section-pad" id="about">
+      <div class="about-grid"><div><p class="eyebrow">03 / немного обо мне</p><h2>Сначала<br><em>смысл.</em></h2></div><div class="about-copy"><p class="about-lead">Я Юрий — разработчик из Иркутска. Собираю цифровые продукты для людей и бизнеса: от первого экрана лендинга до логики бота, который каждый день экономит часы работы.</p><p>Мне нравится находить простую форму для сложной идеи, задавать правильные вопросы и доводить проект до состояния, когда им приятно пользоваться.</p><div class="about-facts"><div><strong>3+</strong><span>года в разработке</span></div><div><strong>4</strong><span>проекта в портфолио</span></div><div><strong>∞</strong><span>любопытства к новому</span></div></div></div></div>
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="contact-inner"><p class="eyebrow">04 / на связи</p><h2>Есть идея?<br><em>Давайте соберём.</em></h2><a class="contact-link" href="https://t.me/Nuar010" target="_blank" rel="noreferrer"><span>@Nuar010</span><span>Написать в Telegram ↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-pad"><span>© 2026 Nuar / Юрий Соколов</span><span>Сделано с вниманием к деталям</span><a href="#top">Наверх ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
