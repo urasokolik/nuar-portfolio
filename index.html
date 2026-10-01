@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Юрий Соколов (Nuar) — Full-Stack Разработчик & Автоматизация</title>
-  <meta name="description" content="Портфолио Юрия Соколова (Nuar). Разработка Telegram Mini Apps, коммерческих сайтов, ботов и систем автоматизации под ключ.">
+  <title>Р®СЂРёР№ РЎРѕРєРѕР»РѕРІ (Nuar) вЂ” Full-Stack Р Р°Р·СЂР°Р±РѕС‚С‡РёРє & РђРІС‚РѕРјР°С‚РёР·Р°С†РёСЏ</title>
+  <meta name="description" content="РџРѕСЂС‚С„РѕР»РёРѕ Р®СЂРёСЏ РЎРѕРєРѕР»РѕРІР° (Nuar). Р Р°Р·СЂР°Р±РѕС‚РєР° Telegram Mini Apps, РєРѕРјРјРµСЂС‡РµСЃРєРёС… СЃР°Р№С‚РѕРІ, Р±РѕС‚РѕРІ Рё СЃРёСЃС‚РµРј Р°РІС‚РѕРјР°С‚РёР·Р°С†РёРё РїРѕРґ РєР»СЋС‡.">
   <meta name="theme-color" content="#090d16">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Юрий Соколов (Nuar) — Full-Stack & Telegram Mini Apps">
-  <meta property="og:description" content="Разработка надежных digital-продуктов: Telegram Mini Apps, сайты, боты, бэкенд и автоматизация.">
+  <meta property="og:title" content="Р®СЂРёР№ РЎРѕРєРѕР»РѕРІ (Nuar) вЂ” Full-Stack & Telegram Mini Apps">
+  <meta property="og:description" content="Р Р°Р·СЂР°Р±РѕС‚РєР° РЅР°РґРµР¶РЅС‹С… digital-РїСЂРѕРґСѓРєС‚РѕРІ: Telegram Mini Apps, СЃР°Р№С‚С‹, Р±РѕС‚С‹, Р±СЌРєРµРЅРґ Рё Р°РІС‚РѕРјР°С‚РёР·Р°С†РёСЏ.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://urasokolik.github.io/nuar-portfolio/">
 
@@ -18,7 +18,763 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css">
+  <style>
+:root {
+  --bg-main: #090d16;
+  --bg-card: rgba(17, 24, 39, 0.7);
+  --bg-card-hover: rgba(26, 35, 54, 0.85);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(59, 130, 246, 0.4);
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --accent-cyan: #38bdf8;
+  --accent-blue: #3b82f6;
+  --accent-emerald: #10b981;
+  --accent-purple: #8b5cf6;
+
+  --font-main: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ambient glow accents */
+.ambient-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+}
+.glow-1 {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12), transparent 70%);
+}
+.glow-2 {
+  width: 600px;
+  height: 600px;
+  top: 30%;
+  right: -200px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent 70%);
+}
+.glow-3 {
+  width: 700px;
+  height: 700px;
+  bottom: 0;
+  left: 10%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08), transparent 70%);
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9, 13, 22, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+.logo-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  color: #0b0f17;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+.logo-text {
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.5px;
+}
+.accent-dot {
+  color: var(--accent-cyan);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #34d399;
+}
+.status-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.burger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 6px;
+}
+.burger-btn span {
+  width: 22px;
+  height: 2px;
+  background: var(--text-main);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn-sm {
+  padding: 7px 14px;
+  font-size: 13px;
+}
+.btn-lg {
+  padding: 13px 26px;
+  font-size: 15px;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
+}
+.btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+  padding: 100px 0 80px;
+  text-align: center;
+}
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: var(--accent-cyan);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 10%, #818cf8 60%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 36px;
+  max-width: 760px;
+}
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  padding: 24px 36px;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 740px;
+}
+.stat-card {
+  text-align: center;
+}
+.stat-number {
+  display: block;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  line-height: 1.2;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-color);
+}
+
+/* Section Header */
+.section {
+  padding: 90px 0;
+}
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 50px;
+}
+.section-tag {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+}
+.filter-btn.active {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.project-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+.project-card.hidden {
+  display: none;
+}
+
+.project-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0d121f;
+  border-bottom: 1px solid var(--border-color);
+}
+.project-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.project-card:hover .project-img-wrap img {
+  transform: scale(1.03);
+}
+.category-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--accent-cyan);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.project-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+.project-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+.project-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.project-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #a0aec0;
+  margin-bottom: 20px;
+}
+.project-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+.link-btn:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* Services Section */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.service-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  transition: var(--transition);
+}
+.service-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+}
+.service-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.service-title {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.service-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.service-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #cbd5e1;
+}
+.service-list li::before {
+  content: "вЂў";
+  color: var(--accent-cyan);
+  font-weight: bold;
+  display: inline-block;
+  width: 14px;
+}
+
+/* Stack Section */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.stack-group {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+.stack-group-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+.stack-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tech-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-family: var(--font-mono);
+  color: #e2e8f0;
+}
+
+/* Workflow Section */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.step-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 26px 20px;
+  position: relative;
+}
+.step-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  opacity: 0.8;
+  line-height: 1;
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+}
+.step-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.step-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Contact Box */
+.contact-box {
+  background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.15), transparent 60%),
+              radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.15), transparent 60%),
+              #101726;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+.contact-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #93c5fd;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.contact-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.contact-subtitle {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+.contact-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.contact-details {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+.contact-details a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding: 32px 0;
+  margin-top: 60px;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.footer-copy {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13.5px;
+}
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.footer-links a:hover {
+  color: var(--text-main);
+}
+.back-to-top {
+  color: var(--accent-cyan) !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-title { font-size: 44px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .header { padding: 12px 0; }
+  .nav {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #090d16;
+    border-bottom: 1px solid var(--border-color);
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    display: none;
+  }
+  .nav.active {
+    display: flex;
+  }
+  .burger-btn {
+    display: flex;
+  }
+  .hero { padding: 60px 0 40px; }
+  .hero-title { font-size: 34px; letter-spacing: -0.5px; }
+  .hero-subtitle { font-size: 15px; }
+  .hero-stats { flex-direction: column; gap: 16px; padding: 20px; }
+  .stat-divider { width: 100%; height: 1px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .stack-grid { grid-template-columns: 1fr; }
+  .contact-title { font-size: 30px; }
+  .contact-box { padding: 40px 20px; }
+}
+
+</style>
 </head>
 <body>
   <div class="ambient-glow glow-1"></div>
@@ -34,23 +790,23 @@
       </a>
 
       <nav class="nav" id="main-nav">
-        <a href="#projects" class="nav-link">Проекты</a>
-        <a href="#services" class="nav-link">Услуги</a>
-        <a href="#stack" class="nav-link">Стек</a>
-        <a href="#workflow" class="nav-link">Процесс</a>
-        <a href="#contact" class="nav-link">Контакты</a>
+        <a href="#projects" class="nav-link">РџСЂРѕРµРєС‚С‹</a>
+        <a href="#services" class="nav-link">РЈСЃР»СѓРіРё</a>
+        <a href="#stack" class="nav-link">РЎС‚РµРє</a>
+        <a href="#workflow" class="nav-link">РџСЂРѕС†РµСЃСЃ</a>
+        <a href="#contact" class="nav-link">РљРѕРЅС‚Р°РєС‚С‹</a>
       </nav>
 
       <div class="header-actions">
-        <div class="status-indicator" title="Готов взять новый проект в работу">
+        <div class="status-indicator" title="Р“РѕС‚РѕРІ РІР·СЏС‚СЊ РЅРѕРІС‹Р№ РїСЂРѕРµРєС‚ РІ СЂР°Р±РѕС‚Сѓ">
           <span class="status-pulse"></span>
           <span class="status-text">Open to work</span>
         </div>
         <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-          <span>Написать в TG</span>
+          <span>РќР°РїРёСЃР°С‚СЊ РІ TG</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </a>
-        <button class="burger-btn" id="burger-btn" aria-label="Открыть меню">
+        <button class="burger-btn" id="burger-btn" aria-label="РћС‚РєСЂС‹С‚СЊ РјРµРЅСЋ">
           <span></span><span></span>
         </button>
       </div>
@@ -62,27 +818,27 @@
     <section class="hero section">
       <div class="container hero-content">
         <div class="hero-badge">
-          <span class="sparkle">⚡</span>
-          <span>Full-Stack · Telegram Mini Apps · Automation</span>
+          <span class="sparkle">вљЎ</span>
+          <span>Full-Stack В· Telegram Mini Apps В· Automation</span>
         </div>
 
         <h1 class="hero-title">
-          Разрабатываю цифровые продукты, <br>
-          <span class="gradient-text">которые приносят результат.</span>
+          Р Р°Р·СЂР°Р±Р°С‚С‹РІР°СЋ С†РёС„СЂРѕРІС‹Рµ РїСЂРѕРґСѓРєС‚С‹, <br>
+          <span class="gradient-text">РєРѕС‚РѕСЂС‹Рµ РїСЂРёРЅРѕСЃСЏС‚ СЂРµР·СѓР»СЊС‚Р°С‚.</span>
         </h1>
 
         <p class="hero-subtitle">
-          Превращаю сложные бизнес-задачи в удобные решения: от реактивных <strong>Telegram Mini Apps</strong> и конверсионных <strong>лендингов</strong> до <strong>высоконагруженных баз данных</strong> и <strong>десктопного софта</strong>.
+          РџСЂРµРІСЂР°С‰Р°СЋ СЃР»РѕР¶РЅС‹Рµ Р±РёР·РЅРµСЃ-Р·Р°РґР°С‡Рё РІ СѓРґРѕР±РЅС‹Рµ СЂРµС€РµРЅРёСЏ: РѕС‚ СЂРµР°РєС‚РёРІРЅС‹С… <strong>Telegram Mini Apps</strong> Рё РєРѕРЅРІРµСЂСЃРёРѕРЅРЅС‹С… <strong>Р»РµРЅРґРёРЅРіРѕРІ</strong> РґРѕ <strong>РІС‹СЃРѕРєРѕРЅР°РіСЂСѓР¶РµРЅРЅС‹С… Р±Р°Р· РґР°РЅРЅС‹С…</strong> Рё <strong>РґРµСЃРєС‚РѕРїРЅРѕРіРѕ СЃРѕС„С‚Р°</strong>.
         </p>
 
         <div class="hero-cta-group">
           <a href="#projects" class="btn btn-lg btn-primary">
-            <span>Смотреть работы</span>
+            <span>РЎРјРѕС‚СЂРµС‚СЊ СЂР°Р±РѕС‚С‹</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
           </a>
           <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-            <span>Обсудить задачу</span>
+            <span>РћР±СЃСѓРґРёС‚СЊ Р·Р°РґР°С‡Сѓ</span>
           </a>
         </div>
 
@@ -90,17 +846,17 @@
         <div class="hero-stats">
           <div class="stat-card">
             <span class="stat-number">10+</span>
-            <span class="stat-label">Реализованных проектов</span>
+            <span class="stat-label">Р РµР°Р»РёР·РѕРІР°РЅРЅС‹С… РїСЂРѕРµРєС‚РѕРІ</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-card">
             <span class="stat-number">100%</span>
-            <span class="stat-label">Сдача в срок & Под ключ</span>
+            <span class="stat-label">РЎРґР°С‡Р° РІ СЃСЂРѕРє & РџРѕРґ РєР»СЋС‡</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-card">
-            <span class="stat-number">&lt; 30 мин</span>
-            <span class="stat-label">Время ответа в Telegram</span>
+            <span class="stat-number">&lt; 30 РјРёРЅ</span>
+            <span class="stat-label">Р’СЂРµРјСЏ РѕС‚РІРµС‚Р° РІ Telegram</span>
           </div>
         </div>
       </div>
@@ -110,18 +866,18 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Портфолио</div>
-          <h2 class="section-title">Избранные проекты и кейсы</h2>
-          <p class="section-subtitle">Реальные коммерческие решения, сервисы и продукты для бизнеса</p>
+          <div class="section-tag">РџРѕСЂС‚С„РѕР»РёРѕ</div>
+          <h2 class="section-title">РР·Р±СЂР°РЅРЅС‹Рµ РїСЂРѕРµРєС‚С‹ Рё РєРµР№СЃС‹</h2>
+          <p class="section-subtitle">Р РµР°Р»СЊРЅС‹Рµ РєРѕРјРјРµСЂС‡РµСЃРєРёРµ СЂРµС€РµРЅРёСЏ, СЃРµСЂРІРёСЃС‹ Рё РїСЂРѕРґСѓРєС‚С‹ РґР»СЏ Р±РёР·РЅРµСЃР°</p>
         </div>
 
         <!-- Filter Tabs -->
         <div class="filter-tabs">
-          <button class="filter-btn active" data-filter="all">Все работы</button>
+          <button class="filter-btn active" data-filter="all">Р’СЃРµ СЂР°Р±РѕС‚С‹</button>
           <button class="filter-btn" data-filter="tma">Telegram & Mini Apps</button>
-          <button class="filter-btn" data-filter="web">Веб-сайты & Лендинги</button>
-          <button class="filter-btn" data-filter="automation">Автоматизация & Софт</button>
-          <button class="filter-btn" data-filter="backend">Бэкенд & Базы данных</button>
+          <button class="filter-btn" data-filter="web">Р’РµР±-СЃР°Р№С‚С‹ & Р›РµРЅРґРёРЅРіРё</button>
+          <button class="filter-btn" data-filter="automation">РђРІС‚РѕРјР°С‚РёР·Р°С†РёСЏ & РЎРѕС„С‚</button>
+          <button class="filter-btn" data-filter="backend">Р‘СЌРєРµРЅРґ & Р‘Р°Р·С‹ РґР°РЅРЅС‹С…</button>
         </div>
 
         <!-- Projects Grid -->
@@ -139,21 +895,21 @@
                 <span class="tag">NestJS</span>
                 <span class="tag">PostgreSQL</span>
                 <span class="tag">Prisma</span>
-                <span class="tag">ЮKassa</span>
+                <span class="tag">Р®Kassa</span>
                 <span class="tag">BullMQ</span>
               </div>
-              <h3 class="project-title">AdBot Marketplace — Биржа рекламы в Telegram</h3>
+              <h3 class="project-title">AdBot Marketplace вЂ” Р‘РёСЂР¶Р° СЂРµРєР»Р°РјС‹ РІ Telegram</h3>
               <p class="project-desc">
-                Полнофункциональная экосистема для автоматизированной покупки и продажи рекламы в каналах: реактивный Web App (TMA), финансовый процессинг, безопасная сделка (Escrow) и фоновые очереди.
+                РџРѕР»РЅРѕС„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅР°СЏ СЌРєРѕСЃРёСЃС‚РµРјР° РґР»СЏ Р°РІС‚РѕРјР°С‚РёР·РёСЂРѕРІР°РЅРЅРѕР№ РїРѕРєСѓРїРєРё Рё РїСЂРѕРґР°Р¶Рё СЂРµРєР»Р°РјС‹ РІ РєР°РЅР°Р»Р°С…: СЂРµР°РєС‚РёРІРЅС‹Р№ Web App (TMA), С„РёРЅР°РЅСЃРѕРІС‹Р№ РїСЂРѕС†РµСЃСЃРёРЅРі, Р±РµР·РѕРїР°СЃРЅР°СЏ СЃРґРµР»РєР° (Escrow) Рё С„РѕРЅРѕРІС‹Рµ РѕС‡РµСЂРµРґРё.
               </p>
               <div class="project-features">
-                <div>✓ Web App кабинет рекламодателя и владельца каналов</div>
-                <div>✓ Бухгалтерская модель счетов и заморозка баланса</div>
-                <div>✓ Прием платежей через ЮKassa и авто-проверка выходов постов</div>
+                <div>вњ“ Web App РєР°Р±РёРЅРµС‚ СЂРµРєР»Р°РјРѕРґР°С‚РµР»СЏ Рё РІР»Р°РґРµР»СЊС†Р° РєР°РЅР°Р»РѕРІ</div>
+                <div>вњ“ Р‘СѓС…РіР°Р»С‚РµСЂСЃРєР°СЏ РјРѕРґРµР»СЊ СЃС‡РµС‚РѕРІ Рё Р·Р°РјРѕСЂРѕР·РєР° Р±Р°Р»Р°РЅСЃР°</div>
+                <div>вњ“ РџСЂРёРµРј РїР»Р°С‚РµР¶РµР№ С‡РµСЂРµР· Р®Kassa Рё Р°РІС‚Рѕ-РїСЂРѕРІРµСЂРєР° РІС‹С…РѕРґРѕРІ РїРѕСЃС‚РѕРІ</div>
               </div>
               <div class="project-footer">
                 <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Обсудить похожий проект</span>
+                  <span>РћР±СЃСѓРґРёС‚СЊ РїРѕС…РѕР¶РёР№ РїСЂРѕРµРєС‚</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
@@ -173,18 +929,18 @@
                 <span class="tag">3D Isometric</span>
                 <span class="tag">High-Conversion UX</span>
               </div>
-              <h3 class="project-title">AutoCAD.PRO — Очный инженерный курс в Краснодаре</h3>
+              <h3 class="project-title">AutoCAD.PRO вЂ” РћС‡РЅС‹Р№ РёРЅР¶РµРЅРµСЂРЅС‹Р№ РєСѓСЂСЃ РІ РљСЂР°СЃРЅРѕРґР°СЂРµ</h3>
               <p class="project-desc">
-                Высококонверсионный промо-сайт в строгой эстетике CAD-систем для набора студентов-инженеров. Акцентная сетка, 3D-модель строительных конструкций и плавная адаптивная верстка.
+                Р’С‹СЃРѕРєРѕРєРѕРЅРІРµСЂСЃРёРѕРЅРЅС‹Р№ РїСЂРѕРјРѕ-СЃР°Р№С‚ РІ СЃС‚СЂРѕРіРѕР№ СЌСЃС‚РµС‚РёРєРµ CAD-СЃРёСЃС‚РµРј РґР»СЏ РЅР°Р±РѕСЂР° СЃС‚СѓРґРµРЅС‚РѕРІ-РёРЅР¶РµРЅРµСЂРѕРІ. РђРєС†РµРЅС‚РЅР°СЏ СЃРµС‚РєР°, 3D-РјРѕРґРµР»СЊ СЃС‚СЂРѕРёС‚РµР»СЊРЅС‹С… РєРѕРЅСЃС‚СЂСѓРєС†РёР№ Рё РїР»Р°РІРЅР°СЏ Р°РґР°РїС‚РёРІРЅР°СЏ РІРµСЂСЃС‚РєР°.
               </p>
               <div class="project-features">
-                <div>✓ Инженерный Dark-UI с акцентной типографикой</div>
-                <div>✓ Воронка лидогенерации на пробные занятия</div>
-                <div>✓ Скорость загрузки менее 1 секунды без тяжелых библиотек</div>
+                <div>вњ“ РРЅР¶РµРЅРµСЂРЅС‹Р№ Dark-UI СЃ Р°РєС†РµРЅС‚РЅРѕР№ С‚РёРїРѕРіСЂР°С„РёРєРѕР№</div>
+                <div>вњ“ Р’РѕСЂРѕРЅРєР° Р»РёРґРѕРіРµРЅРµСЂР°С†РёРё РЅР° РїСЂРѕР±РЅС‹Рµ Р·Р°РЅСЏС‚РёСЏ</div>
+                <div>вњ“ РЎРєРѕСЂРѕСЃС‚СЊ Р·Р°РіСЂСѓР·РєРё РјРµРЅРµРµ 1 СЃРµРєСѓРЅРґС‹ Р±РµР· С‚СЏР¶РµР»С‹С… Р±РёР±Р»РёРѕС‚РµРє</div>
               </div>
               <div class="project-footer">
                 <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Заказать продающий лендинг</span>
+                  <span>Р—Р°РєР°Р·Р°С‚СЊ РїСЂРѕРґР°СЋС‰РёР№ Р»РµРЅРґРёРЅРі</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
@@ -204,18 +960,18 @@
                 <span class="tag">Tkinter GUI</span>
                 <span class="tag">PyInstaller</span>
               </div>
-              <h3 class="project-title">Background Clicker — Win32 Desktop Automation Tool</h3>
+              <h3 class="project-title">Background Clicker вЂ” Win32 Desktop Automation Tool</h3>
               <p class="project-desc">
-                Десктопная программа с графическим интерфейсом для циклической автоматизации кликов на втором мониторе через низкоуровневые Win32 сообщения без перемещения курсора мыши и без потери фокуса активным окном.
+                Р”РµСЃРєС‚РѕРїРЅР°СЏ РїСЂРѕРіСЂР°РјРјР° СЃ РіСЂР°С„РёС‡РµСЃРєРёРј РёРЅС‚РµСЂС„РµР№СЃРѕРј РґР»СЏ С†РёРєР»РёС‡РµСЃРєРѕР№ Р°РІС‚РѕРјР°С‚РёР·Р°С†РёРё РєР»РёРєРѕРІ РЅР° РІС‚РѕСЂРѕРј РјРѕРЅРёС‚РѕСЂРµ С‡РµСЂРµР· РЅРёР·РєРѕСѓСЂРѕРІРЅРµРІС‹Рµ Win32 СЃРѕРѕР±С‰РµРЅРёСЏ Р±РµР· РїРµСЂРµРјРµС‰РµРЅРёСЏ РєСѓСЂСЃРѕСЂР° РјС‹С€Рё Рё Р±РµР· РїРѕС‚РµСЂРё С„РѕРєСѓСЃР° Р°РєС‚РёРІРЅС‹Рј РѕРєРЅРѕРј.
               </p>
               <div class="project-features">
-                <div>✓ Эмуляция PostMessage без захвата курсора мыши</div>
-                <div>✓ 4 независимых сценария и таймер захвата координат</div>
-                <div>✓ Глобальные хоткеи (Shift+1..4, F12) и портативный .exe</div>
+                <div>вњ“ Р­РјСѓР»СЏС†РёСЏ PostMessage Р±РµР· Р·Р°С…РІР°С‚Р° РєСѓСЂСЃРѕСЂР° РјС‹С€Рё</div>
+                <div>вњ“ 4 РЅРµР·Р°РІРёСЃРёРјС‹С… СЃС†РµРЅР°СЂРёСЏ Рё С‚Р°Р№РјРµСЂ Р·Р°С…РІР°С‚Р° РєРѕРѕСЂРґРёРЅР°С‚</div>
+                <div>вњ“ Р“Р»РѕР±Р°Р»СЊРЅС‹Рµ С…РѕС‚РєРµРё (Shift+1..4, F12) Рё РїРѕСЂС‚Р°С‚РёРІРЅС‹Р№ .exe</div>
               </div>
               <div class="project-footer">
                 <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Смотреть код на GitHub</span>
+                  <span>РЎРјРѕС‚СЂРµС‚СЊ РєРѕРґ РЅР° GitHub</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
@@ -235,18 +991,18 @@
                 <span class="tag">Database Design (3NF)</span>
                 <span class="tag">Triggers & Procedures</span>
               </div>
-              <h3 class="project-title">MusicStore Enterprise DB — Реляционная база данных</h3>
+              <h3 class="project-title">MusicStore Enterprise DB вЂ” Р РµР»СЏС†РёРѕРЅРЅР°СЏ Р±Р°Р·Р° РґР°РЅРЅС‹С…</h3>
               <p class="project-desc">
-                Проектирование и реализация с нуля промышленной СУБД для интернет-магазина: 14 таблиц в 3-й нормальной форме, хранимые процедуры, автоматические триггеры складского учета, аудит и сценарии резервного копирования.
+                РџСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёРµ Рё СЂРµР°Р»РёР·Р°С†РёСЏ СЃ РЅСѓР»СЏ РїСЂРѕРјС‹С€Р»РµРЅРЅРѕР№ РЎРЈР‘Р” РґР»СЏ РёРЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅР°: 14 С‚Р°Р±Р»РёС† РІ 3-Р№ РЅРѕСЂРјР°Р»СЊРЅРѕР№ С„РѕСЂРјРµ, С…СЂР°РЅРёРјС‹Рµ РїСЂРѕС†РµРґСѓСЂС‹, Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёРµ С‚СЂРёРіРіРµСЂС‹ СЃРєР»Р°РґСЃРєРѕРіРѕ СѓС‡РµС‚Р°, Р°СѓРґРёС‚ Рё СЃС†РµРЅР°СЂРёРё СЂРµР·РµСЂРІРЅРѕРіРѕ РєРѕРїРёСЂРѕРІР°РЅРёСЏ.
               </p>
               <div class="project-features">
-                <div>✓ Нормализованная архитектура 3NF с ограничениями целостности</div>
-                <div>✓ Бизнес-логика на уровне БД (PL/pgSQL триггеры и функции)</div>
-                <div>✓ Автоматизированные бэкапы pg_dump и отказоустойчивость</div>
+                <div>вњ“ РќРѕСЂРјР°Р»РёР·РѕРІР°РЅРЅР°СЏ Р°СЂС…РёС‚РµРєС‚СѓСЂР° 3NF СЃ РѕРіСЂР°РЅРёС‡РµРЅРёСЏРјРё С†РµР»РѕСЃС‚РЅРѕСЃС‚Рё</div>
+                <div>вњ“ Р‘РёР·РЅРµСЃ-Р»РѕРіРёРєР° РЅР° СѓСЂРѕРІРЅРµ Р‘Р” (PL/pgSQL С‚СЂРёРіРіРµСЂС‹ Рё С„СѓРЅРєС†РёРё)</div>
+                <div>вњ“ РђРІС‚РѕРјР°С‚РёР·РёСЂРѕРІР°РЅРЅС‹Рµ Р±СЌРєР°РїС‹ pg_dump Рё РѕС‚РєР°Р·РѕСѓСЃС‚РѕР№С‡РёРІРѕСЃС‚СЊ</div>
               </div>
               <div class="project-footer">
                 <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Заказать архитектуру БД</span>
+                  <span>Р—Р°РєР°Р·Р°С‚СЊ Р°СЂС…РёС‚РµРєС‚СѓСЂСѓ Р‘Р”</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
@@ -267,18 +1023,18 @@
                 <span class="tag">LibreOffice CLI</span>
                 <span class="tag">Linux / Nginx</span>
               </div>
-              <h3 class="project-title">FileBrowser Cloud Suite — Облачное корпоративное хранилище</h3>
+              <h3 class="project-title">FileBrowser Cloud Suite вЂ” РћР±Р»Р°С‡РЅРѕРµ РєРѕСЂРїРѕСЂР°С‚РёРІРЅРѕРµ С…СЂР°РЅРёР»РёС‰Рµ</h3>
               <p class="project-desc">
-                Кастомизация и развертывание enterprise-хранилища на Linux: фоновая headless-конвертация офисных документов и чертежей в PDF, встроенный просмотрщик, редактор аннотаций, корзина и защищенный шаринг.
+                РљР°СЃС‚РѕРјРёР·Р°С†РёСЏ Рё СЂР°Р·РІРµСЂС‚С‹РІР°РЅРёРµ enterprise-С…СЂР°РЅРёР»РёС‰Р° РЅР° Linux: С„РѕРЅРѕРІР°СЏ headless-РєРѕРЅРІРµСЂС‚Р°С†РёСЏ РѕС„РёСЃРЅС‹С… РґРѕРєСѓРјРµРЅС‚РѕРІ Рё С‡РµСЂС‚РµР¶РµР№ РІ PDF, РІСЃС‚СЂРѕРµРЅРЅС‹Р№ РїСЂРѕСЃРјРѕС‚СЂС‰РёРє, СЂРµРґР°РєС‚РѕСЂ Р°РЅРЅРѕС‚Р°С†РёР№, РєРѕСЂР·РёРЅР° Рё Р·Р°С‰РёС‰РµРЅРЅС‹Р№ С€Р°СЂРёРЅРі.
               </p>
               <div class="project-features">
-                <div>✓ Конвертация DOCX/XLSX в PDF на лету через LibreOffice</div>
-                <div>✓ Встроенный PDF.js просмотрщик и PDF Overlay Editor</div>
-                <div>✓ Деплой на боевой Linux сервер с Nginx и SSL</div>
+                <div>вњ“ РљРѕРЅРІРµСЂС‚Р°С†РёСЏ DOCX/XLSX РІ PDF РЅР° Р»РµС‚Сѓ С‡РµСЂРµР· LibreOffice</div>
+                <div>вњ“ Р’СЃС‚СЂРѕРµРЅРЅС‹Р№ PDF.js РїСЂРѕСЃРјРѕС‚СЂС‰РёРє Рё PDF Overlay Editor</div>
+                <div>вњ“ Р”РµРїР»РѕР№ РЅР° Р±РѕРµРІРѕР№ Linux СЃРµСЂРІРµСЂ СЃ Nginx Рё SSL</div>
               </div>
               <div class="project-footer">
                 <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Обсудить DevOps & Облака</span>
+                  <span>РћР±СЃСѓРґРёС‚СЊ DevOps & РћР±Р»Р°РєР°</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
@@ -288,7 +1044,7 @@
           <!-- 6. Centralny -->
           <div class="project-card" data-category="web">
             <div class="project-img-wrap">
-              <img src="assets/projects/centralny-bar-shop.png" alt="Магазин-бар Центральный" loading="lazy">
+              <img src="assets/projects/centralny-bar-shop.png" alt="РњР°РіР°Р·РёРЅ-Р±Р°СЂ Р¦РµРЅС‚СЂР°Р»СЊРЅС‹Р№" loading="lazy">
               <span class="category-badge">E-Commerce Web</span>
             </div>
             <div class="project-body">
@@ -298,18 +1054,18 @@
                 <span class="tag">E-Commerce Catalog</span>
                 <span class="tag">Demo Admin</span>
               </div>
-              <h3 class="project-title">Магазин-бар «Центральный» в Щёлково</h3>
+              <h3 class="project-title">РњР°РіР°Р·РёРЅ-Р±Р°СЂ В«Р¦РµРЅС‚СЂР°Р»СЊРЅС‹Р№В» РІ Р©С‘Р»РєРѕРІРѕ</h3>
               <p class="project-desc">
-                Сайт магазина-бара крафтовых напитков и кухни с интерактивным каталогом товаров, демо-админкой для персонала, блоком контактов и кнопкой прокладки маршрута.
+                РЎР°Р№С‚ РјР°РіР°Р·РёРЅР°-Р±Р°СЂР° РєСЂР°С„С‚РѕРІС‹С… РЅР°РїРёС‚РєРѕРІ Рё РєСѓС…РЅРё СЃ РёРЅС‚РµСЂР°РєС‚РёРІРЅС‹Рј РєР°С‚Р°Р»РѕРіРѕРј С‚РѕРІР°СЂРѕРІ, РґРµРјРѕ-Р°РґРјРёРЅРєРѕР№ РґР»СЏ РїРµСЂСЃРѕРЅР°Р»Р°, Р±Р»РѕРєРѕРј РєРѕРЅС‚Р°РєС‚РѕРІ Рё РєРЅРѕРїРєРѕР№ РїСЂРѕРєР»Р°РґРєРё РјР°СЂС€СЂСѓС‚Р°.
               </p>
               <div class="project-features">
-                <div>✓ Интерактивный фильтруемый каталог продукции</div>
-                <div>✓ Демо-панель управления позициями</div>
-                <div>✓ Адаптация под все мобильные устройства</div>
+                <div>вњ“ РРЅС‚РµСЂР°РєС‚РёРІРЅС‹Р№ С„РёР»СЊС‚СЂСѓРµРјС‹Р№ РєР°С‚Р°Р»РѕРі РїСЂРѕРґСѓРєС†РёРё</div>
+                <div>вњ“ Р”РµРјРѕ-РїР°РЅРµР»СЊ СѓРїСЂР°РІР»РµРЅРёСЏ РїРѕР·РёС†РёСЏРјРё</div>
+                <div>вњ“ РђРґР°РїС‚Р°С†РёСЏ РїРѕРґ РІСЃРµ РјРѕР±РёР»СЊРЅС‹Рµ СѓСЃС‚СЂРѕР№СЃС‚РІР°</div>
               </div>
               <div class="project-footer">
                 <a href="https://github.com/urasokolik/centralny-beer-shop" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Репозиторий проекта</span>
+                  <span>Р РµРїРѕР·РёС‚РѕСЂРёР№ РїСЂРѕРµРєС‚Р°</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
@@ -319,7 +1075,7 @@
           <!-- 7. Epoha Veshchey -->
           <div class="project-card" data-category="web">
             <div class="project-img-wrap">
-              <img src="assets/projects/epoha-veshchey-vintage.png" alt="Эпоха вещей СССР" loading="lazy">
+              <img src="assets/projects/epoha-veshchey-vintage.png" alt="Р­РїРѕС…Р° РІРµС‰РµР№ РЎРЎРЎР " loading="lazy">
               <span class="category-badge">JAMstack Store</span>
             </div>
             <div class="project-body">
@@ -329,18 +1085,18 @@
                 <span class="tag">Vintage UI</span>
                 <span class="tag">SEO Friendly</span>
               </div>
-              <h3 class="project-title">«Эпоха вещей СССР» — Семейный магазин винтажа</h3>
+              <h3 class="project-title">В«Р­РїРѕС…Р° РІРµС‰РµР№ РЎРЎРЎР В» вЂ” РЎРµРјРµР№РЅС‹Р№ РјР°РіР°Р·РёРЅ РІРёРЅС‚Р°Р¶Р°</h3>
               <p class="project-desc">
-                Атмосферный интернет-магазин советского антиквариата с админкой Netlify CMS, позволяющей клиенту самостоятельно добавлять новые лоты, редактировать цены и вести блог историй.
+                РђС‚РјРѕСЃС„РµСЂРЅС‹Р№ РёРЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅ СЃРѕРІРµС‚СЃРєРѕРіРѕ Р°РЅС‚РёРєРІР°СЂРёР°С‚Р° СЃ Р°РґРјРёРЅРєРѕР№ Netlify CMS, РїРѕР·РІРѕР»СЏСЋС‰РµР№ РєР»РёРµРЅС‚Сѓ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ РґРѕР±Р°РІР»СЏС‚СЊ РЅРѕРІС‹Рµ Р»РѕС‚С‹, СЂРµРґР°РєС‚РёСЂРѕРІР°С‚СЊ С†РµРЅС‹ Рё РІРµСЃС‚Рё Р±Р»РѕРі РёСЃС‚РѕСЂРёР№.
               </p>
               <div class="project-features">
-                <div>✓ Уникальный авторский дизайн в стиле советской эстетики</div>
-                <div>✓ Админ-панель Netlify CMS без серверных расходов</div>
-                <div>✓ Каталог с фильтрацией по категориям (хрусталь, фарфор, стекло)</div>
+                <div>вњ“ РЈРЅРёРєР°Р»СЊРЅС‹Р№ Р°РІС‚РѕСЂСЃРєРёР№ РґРёР·Р°Р№РЅ РІ СЃС‚РёР»Рµ СЃРѕРІРµС‚СЃРєРѕР№ СЌСЃС‚РµС‚РёРєРё</div>
+                <div>вњ“ РђРґРјРёРЅ-РїР°РЅРµР»СЊ Netlify CMS Р±РµР· СЃРµСЂРІРµСЂРЅС‹С… СЂР°СЃС…РѕРґРѕРІ</div>
+                <div>вњ“ РљР°С‚Р°Р»РѕРі СЃ С„РёР»СЊС‚СЂР°С†РёРµР№ РїРѕ РєР°С‚РµРіРѕСЂРёСЏРј (С…СЂСѓСЃС‚Р°Р»СЊ, С„Р°СЂС„РѕСЂ, СЃС‚РµРєР»Рѕ)</div>
               </div>
               <div class="project-footer">
                 <a href="https://github.com/urasokolik/epoha-veshchey-site" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Репозиторий проекта</span>
+                  <span>Р РµРїРѕР·РёС‚РѕСЂРёР№ РїСЂРѕРµРєС‚Р°</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
@@ -359,18 +1115,18 @@
                 <span class="tag">Responsive UI</span>
                 <span class="tag">GitHub Pages</span>
               </div>
-              <h3 class="project-title">Lexify — Онлайн-школа английского языка</h3>
+              <h3 class="project-title">Lexify вЂ” РћРЅР»Р°Р№РЅ-С€РєРѕР»Р° Р°РЅРіР»РёР№СЃРєРѕРіРѕ СЏР·С‹РєР°</h3>
               <p class="project-desc">
-                Адаптивный промо-лендинг для волонтёрской школы английского языка. Мягкая дружелюбная айдентика, интерактивные карточки уровней, презентация преподавателей и форма записи.
+                РђРґР°РїС‚РёРІРЅС‹Р№ РїСЂРѕРјРѕ-Р»РµРЅРґРёРЅРі РґР»СЏ РІРѕР»РѕРЅС‚С‘СЂСЃРєРѕР№ С€РєРѕР»С‹ Р°РЅРіР»РёР№СЃРєРѕРіРѕ СЏР·С‹РєР°. РњСЏРіРєР°СЏ РґСЂСѓР¶РµР»СЋР±РЅР°СЏ Р°Р№РґРµРЅС‚РёРєР°, РёРЅС‚РµСЂР°РєС‚РёРІРЅС‹Рµ РєР°СЂС‚РѕС‡РєРё СѓСЂРѕРІРЅРµР№, РїСЂРµР·РµРЅС‚Р°С†РёСЏ РїСЂРµРїРѕРґР°РІР°С‚РµР»РµР№ Рё С„РѕСЂРјР° Р·Р°РїРёСЃРё.
               </p>
               <div class="project-features">
-                <div>✓ Дружелюбный дизайн с пастельными тонами</div>
-                <div>✓ Адаптивная сетка под смартфоны и планшеты</div>
-                <div>✓ Мгновенная загрузка через GitHub Pages</div>
+                <div>вњ“ Р”СЂСѓР¶РµР»СЋР±РЅС‹Р№ РґРёР·Р°Р№РЅ СЃ РїР°СЃС‚РµР»СЊРЅС‹РјРё С‚РѕРЅР°РјРё</div>
+                <div>вњ“ РђРґР°РїС‚РёРІРЅР°СЏ СЃРµС‚РєР° РїРѕРґ СЃРјР°СЂС‚С„РѕРЅС‹ Рё РїР»Р°РЅС€РµС‚С‹</div>
+                <div>вњ“ РњРіРЅРѕРІРµРЅРЅР°СЏ Р·Р°РіСЂСѓР·РєР° С‡РµСЂРµР· GitHub Pages</div>
               </div>
               <div class="project-footer">
                 <a href="https://urasokolik.github.io/lexify-landing-page/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Открыть живой сайт</span>
+                  <span>РћС‚РєСЂС‹С‚СЊ Р¶РёРІРѕР№ СЃР°Р№С‚</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
@@ -385,61 +1141,61 @@
     <section class="section" id="services">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Услуги</div>
-          <h2 class="section-title">Чем я могу помочь вашему бизнесу</h2>
-          <p class="section-subtitle">Полный цикл разработки: от проектирования идеи до запуска и поддержки</p>
+          <div class="section-tag">РЈСЃР»СѓРіРё</div>
+          <h2 class="section-title">Р§РµРј СЏ РјРѕРіСѓ РїРѕРјРѕС‡СЊ РІР°С€РµРјСѓ Р±РёР·РЅРµСЃСѓ</h2>
+          <p class="section-subtitle">РџРѕР»РЅС‹Р№ С†РёРєР» СЂР°Р·СЂР°Р±РѕС‚РєРё: РѕС‚ РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ РёРґРµРё РґРѕ Р·Р°РїСѓСЃРєР° Рё РїРѕРґРґРµСЂР¶РєРё</p>
         </div>
 
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">📱</div>
-            <h3 class="service-title">Telegram Mini Apps & Боты</h3>
+            <div class="service-icon">рџ“±</div>
+            <h3 class="service-title">Telegram Mini Apps & Р‘РѕС‚С‹</h3>
             <p class="service-desc">
-              Разработка Web Apps внутри Telegram на React/Next.js: интернет-магазины, сервисы записи, каталоги, системы лояльности и платежи. Любые сценарии ботов на Python (aiogram) и Node.js.
+              Р Р°Р·СЂР°Р±РѕС‚РєР° Web Apps РІРЅСѓС‚СЂРё Telegram РЅР° React/Next.js: РёРЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅС‹, СЃРµСЂРІРёСЃС‹ Р·Р°РїРёСЃРё, РєР°С‚Р°Р»РѕРіРё, СЃРёСЃС‚РµРјС‹ Р»РѕСЏР»СЊРЅРѕСЃС‚Рё Рё РїР»Р°С‚РµР¶Рё. Р›СЋР±С‹Рµ СЃС†РµРЅР°СЂРёРё Р±РѕС‚РѕРІ РЅР° Python (aiogram) Рё Node.js.
             </p>
             <ul class="service-list">
-              <li>Интеграция с ЮKassa, крипто-эквайрингом, СБП</li>
-              <li>Синхронизация с 1С, CRM и внешними API</li>
-              <li>Личные кабинеты и веб-интерфейсы</li>
+              <li>РРЅС‚РµРіСЂР°С†РёСЏ СЃ Р®Kassa, РєСЂРёРїС‚Рѕ-СЌРєРІР°Р№СЂРёРЅРіРѕРј, РЎР‘Рџ</li>
+              <li>РЎРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ СЃ 1РЎ, CRM Рё РІРЅРµС€РЅРёРјРё API</li>
+              <li>Р›РёС‡РЅС‹Рµ РєР°Р±РёРЅРµС‚С‹ Рё РІРµР±-РёРЅС‚РµСЂС„РµР№СЃС‹</li>
             </ul>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">💻</div>
-            <h3 class="service-title">Коммерческие сайты & Лендинги</h3>
+            <div class="service-icon">рџ’»</div>
+            <h3 class="service-title">РљРѕРјРјРµСЂС‡РµСЃРєРёРµ СЃР°Р№С‚С‹ & Р›РµРЅРґРёРЅРіРё</h3>
             <p class="service-desc">
-              Создание современных продающих сайтов, промо-страниц и каталогов. Чистая верстка, быстрая загрузка (&lt;1 сек), идеальная адаптация под мобильные устройства и базовое SEO.
+              РЎРѕР·РґР°РЅРёРµ СЃРѕРІСЂРµРјРµРЅРЅС‹С… РїСЂРѕРґР°СЋС‰РёС… СЃР°Р№С‚РѕРІ, РїСЂРѕРјРѕ-СЃС‚СЂР°РЅРёС† Рё РєР°С‚Р°Р»РѕРіРѕРІ. Р§РёСЃС‚Р°СЏ РІРµСЂСЃС‚РєР°, Р±С‹СЃС‚СЂР°СЏ Р·Р°РіСЂСѓР·РєР° (&lt;1 СЃРµРє), РёРґРµР°Р»СЊРЅР°СЏ Р°РґР°РїС‚Р°С†РёСЏ РїРѕРґ РјРѕР±РёР»СЊРЅС‹Рµ СѓСЃС‚СЂРѕР№СЃС‚РІР° Рё Р±Р°Р·РѕРІРѕРµ SEO.
             </p>
             <ul class="service-list">
-              <li>Высокая конверсия и понятный UX</li>
-              <li>Интеграция админ-панелей для легкого редактирования</li>
-              <li>Подключение аналитики (Яндекс Метрика, GA4)</li>
+              <li>Р’С‹СЃРѕРєР°СЏ РєРѕРЅРІРµСЂСЃРёСЏ Рё РїРѕРЅСЏС‚РЅС‹Р№ UX</li>
+              <li>РРЅС‚РµРіСЂР°С†РёСЏ Р°РґРјРёРЅ-РїР°РЅРµР»РµР№ РґР»СЏ Р»РµРіРєРѕРіРѕ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ</li>
+              <li>РџРѕРґРєР»СЋС‡РµРЅРёРµ Р°РЅР°Р»РёС‚РёРєРё (РЇРЅРґРµРєСЃ РњРµС‚СЂРёРєР°, GA4)</li>
             </ul>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">⚡</div>
-            <h3 class="service-title">Автоматизация & Парсинг данных</h3>
+            <div class="service-icon">вљЎ</div>
+            <h3 class="service-title">РђРІС‚РѕРјР°С‚РёР·Р°С†РёСЏ & РџР°СЂСЃРёРЅРі РґР°РЅРЅС‹С…</h3>
             <p class="service-desc">
-              Автоматизация рутинных задач сотрудника: фоновые кликеры, сбор баз данных, мониторинг цен конкурентов, рассылки и синхронизация таблиц.
+              РђРІС‚РѕРјР°С‚РёР·Р°С†РёСЏ СЂСѓС‚РёРЅРЅС‹С… Р·Р°РґР°С‡ СЃРѕС‚СЂСѓРґРЅРёРєР°: С„РѕРЅРѕРІС‹Рµ РєР»РёРєРµСЂС‹, СЃР±РѕСЂ Р±Р°Р· РґР°РЅРЅС‹С…, РјРѕРЅРёС‚РѕСЂРёРЅРі С†РµРЅ РєРѕРЅРєСѓСЂРµРЅС‚РѕРІ, СЂР°СЃСЃС‹Р»РєРё Рё СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ С‚Р°Р±Р»РёС†.
             </p>
             <ul class="service-list">
-              <li>Парсинг сайтов и закрытых каталогов (Playwright/API)</li>
-              <li>Десктопные утилиты на Python/Win32</li>
-              <li>Оповещения в Telegram о важных событиях</li>
+              <li>РџР°СЂСЃРёРЅРі СЃР°Р№С‚РѕРІ Рё Р·Р°РєСЂС‹С‚С‹С… РєР°С‚Р°Р»РѕРіРѕРІ (Playwright/API)</li>
+              <li>Р”РµСЃРєС‚РѕРїРЅС‹Рµ СѓС‚РёР»РёС‚С‹ РЅР° Python/Win32</li>
+              <li>РћРїРѕРІРµС‰РµРЅРёСЏ РІ Telegram Рѕ РІР°Р¶РЅС‹С… СЃРѕР±С‹С‚РёСЏС…</li>
             </ul>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">🗄️</div>
-            <h3 class="service-title">Бэкенд, Базы данных & DevOps</h3>
+            <div class="service-icon">рџ—„пёЏ</div>
+            <h3 class="service-title">Р‘СЌРєРµРЅРґ, Р‘Р°Р·С‹ РґР°РЅРЅС‹С… & DevOps</h3>
             <p class="service-desc">
-              Проектирование надежной серверной архитектуры: проектирование БД PostgreSQL/MySQL, написание REST API, настройка очередей (Redis/BullMQ) и развертывание на Linux-серверах.
+              РџСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёРµ РЅР°РґРµР¶РЅРѕР№ СЃРµСЂРІРµСЂРЅРѕР№ Р°СЂС…РёС‚РµРєС‚СѓСЂС‹: РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёРµ Р‘Р” PostgreSQL/MySQL, РЅР°РїРёСЃР°РЅРёРµ REST API, РЅР°СЃС‚СЂРѕР№РєР° РѕС‡РµСЂРµРґРµР№ (Redis/BullMQ) Рё СЂР°Р·РІРµСЂС‚С‹РІР°РЅРёРµ РЅР° Linux-СЃРµСЂРІРµСЂР°С….
             </p>
             <ul class="service-list">
-              <li>Оптимизация сложных SQL-запросов и триггеры</li>
-              <li>Настройка Docker, Nginx, SSL сертификатов</li>
-              <li>Автоматизация бэкапов и мониторинг</li>
+              <li>РћРїС‚РёРјРёР·Р°С†РёСЏ СЃР»РѕР¶РЅС‹С… SQL-Р·Р°РїСЂРѕСЃРѕРІ Рё С‚СЂРёРіРіРµСЂС‹</li>
+              <li>РќР°СЃС‚СЂРѕР№РєР° Docker, Nginx, SSL СЃРµСЂС‚РёС„РёРєР°С‚РѕРІ</li>
+              <li>РђРІС‚РѕРјР°С‚РёР·Р°С†РёСЏ Р±СЌРєР°РїРѕРІ Рё РјРѕРЅРёС‚РѕСЂРёРЅРі</li>
             </ul>
           </div>
         </div>
@@ -450,9 +1206,9 @@
     <section class="section" id="stack">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Технологии</div>
-          <h2 class="section-title">Стек и инструменты разработки</h2>
-          <p class="section-subtitle">Использую проверенные современные технологии для надежности и скорости</p>
+          <div class="section-tag">РўРµС…РЅРѕР»РѕРіРёРё</div>
+          <h2 class="section-title">РЎС‚РµРє Рё РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹ СЂР°Р·СЂР°Р±РѕС‚РєРё</h2>
+          <p class="section-subtitle">РСЃРїРѕР»СЊР·СѓСЋ РїСЂРѕРІРµСЂРµРЅРЅС‹Рµ СЃРѕРІСЂРµРјРµРЅРЅС‹Рµ С‚РµС…РЅРѕР»РѕРіРёРё РґР»СЏ РЅР°РґРµР¶РЅРѕСЃС‚Рё Рё СЃРєРѕСЂРѕСЃС‚Рё</p>
         </div>
 
         <div class="stack-grid">
@@ -482,7 +1238,7 @@
           </div>
 
           <div class="stack-group">
-            <div class="stack-group-title">Telegram & Боты</div>
+            <div class="stack-group-title">Telegram & Р‘РѕС‚С‹</div>
             <div class="stack-items">
               <span class="tech-pill">Telegram Mini Apps (TMA)</span>
               <span class="tech-pill">aiogram 3.x</span>
@@ -510,7 +1266,7 @@
               <span class="tech-pill">Linux (Ubuntu)</span>
               <span class="tech-pill">Nginx / SSL</span>
               <span class="tech-pill">Win32 API</span>
-              <span class="tech-pill">ЮKassa API</span>
+              <span class="tech-pill">Р®Kassa API</span>
               <span class="tech-pill">Git / GitHub</span>
             </div>
           </div>
@@ -522,41 +1278,41 @@
     <section class="section" id="workflow">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Прозрачность</div>
-          <h2 class="section-title">Как строится работа</h2>
-          <p class="section-subtitle">Простой и понятный процесс от первого контакта до релиза</p>
+          <div class="section-tag">РџСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ</div>
+          <h2 class="section-title">РљР°Рє СЃС‚СЂРѕРёС‚СЃСЏ СЂР°Р±РѕС‚Р°</h2>
+          <p class="section-subtitle">РџСЂРѕСЃС‚РѕР№ Рё РїРѕРЅСЏС‚РЅС‹Р№ РїСЂРѕС†РµСЃСЃ РѕС‚ РїРµСЂРІРѕРіРѕ РєРѕРЅС‚Р°РєС‚Р° РґРѕ СЂРµР»РёР·Р°</p>
         </div>
 
         <div class="steps-grid">
           <div class="step-card">
             <div class="step-num">01</div>
-            <h3 class="step-title">Анализ & ТЗ</h3>
+            <h3 class="step-title">РђРЅР°Р»РёР· & РўР—</h3>
             <p class="step-desc">
-              Обсуждаем вашу задачу, цели и бюджет. Помогаю составить чёткое ТЗ без лишнего оверинжиниринга.
+              РћР±СЃСѓР¶РґР°РµРј РІР°С€Сѓ Р·Р°РґР°С‡Сѓ, С†РµР»Рё Рё Р±СЋРґР¶РµС‚. РџРѕРјРѕРіР°СЋ СЃРѕСЃС‚Р°РІРёС‚СЊ С‡С‘С‚РєРѕРµ РўР— Р±РµР· Р»РёС€РЅРµРіРѕ РѕРІРµСЂРёРЅР¶РёРЅРёСЂРёРЅРіР°.
             </p>
           </div>
 
           <div class="step-card">
             <div class="step-num">02</div>
-            <h3 class="step-title">Прототип & MVP</h3>
+            <h3 class="step-title">РџСЂРѕС‚РѕС‚РёРї & MVP</h3>
             <p class="step-desc">
-              Быстро собираю рабочий прототип или структуру проекта, чтобы вы сразу увидели, как продукт будет работать.
+              Р‘С‹СЃС‚СЂРѕ СЃРѕР±РёСЂР°СЋ СЂР°Р±РѕС‡РёР№ РїСЂРѕС‚РѕС‚РёРї РёР»Рё СЃС‚СЂСѓРєС‚СѓСЂСѓ РїСЂРѕРµРєС‚Р°, С‡С‚РѕР±С‹ РІС‹ СЃСЂР°Р·Сѓ СѓРІРёРґРµР»Рё, РєР°Рє РїСЂРѕРґСѓРєС‚ Р±СѓРґРµС‚ СЂР°Р±РѕС‚Р°С‚СЊ.
             </p>
           </div>
 
           <div class="step-card">
             <div class="step-num">03</div>
-            <h3 class="step-title">Разработка & Тесты</h3>
+            <h3 class="step-title">Р Р°Р·СЂР°Р±РѕС‚РєР° & РўРµСЃС‚С‹</h3>
             <p class="step-desc">
-              Пишу чистый, масштабируемый код, настраиваю БД, подключаю платежи и тестирую на всех устройствах.
+              РџРёС€Сѓ С‡РёСЃС‚С‹Р№, РјР°СЃС€С‚Р°Р±РёСЂСѓРµРјС‹Р№ РєРѕРґ, РЅР°СЃС‚СЂР°РёРІР°СЋ Р‘Р”, РїРѕРґРєР»СЋС‡Р°СЋ РїР»Р°С‚РµР¶Рё Рё С‚РµСЃС‚РёСЂСѓСЋ РЅР° РІСЃРµС… СѓСЃС‚СЂРѕР№СЃС‚РІР°С….
             </p>
           </div>
 
           <div class="step-card">
             <div class="step-num">04</div>
-            <h3 class="step-title">Запуск & Инструкции</h3>
+            <h3 class="step-title">Р—Р°РїСѓСЃРє & РРЅСЃС‚СЂСѓРєС†РёРё</h3>
             <p class="step-desc">
-              Разворачиваю проект на сервере, настраиваю домен/SSL, передаю исходники и видео-инструкции по управлению.
+              Р Р°Р·РІРѕСЂР°С‡РёРІР°СЋ РїСЂРѕРµРєС‚ РЅР° СЃРµСЂРІРµСЂРµ, РЅР°СЃС‚СЂР°РёРІР°СЋ РґРѕРјРµРЅ/SSL, РїРµСЂРµРґР°СЋ РёСЃС…РѕРґРЅРёРєРё Рё РІРёРґРµРѕ-РёРЅСЃС‚СЂСѓРєС†РёРё РїРѕ СѓРїСЂР°РІР»РµРЅРёСЋ.
             </p>
           </div>
         </div>
@@ -567,26 +1323,26 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="contact-box">
-          <div class="contact-badge">Связаться со мной</div>
-          <h2 class="contact-title">Есть проект или идея?<br><span class="gradient-text">Давайте сделаем красиво!</span></h2>
+          <div class="contact-badge">РЎРІСЏР·Р°С‚СЊСЃСЏ СЃРѕ РјРЅРѕР№</div>
+          <h2 class="contact-title">Р•СЃС‚СЊ РїСЂРѕРµРєС‚ РёР»Рё РёРґРµСЏ?<br><span class="gradient-text">Р”Р°РІР°Р№С‚Рµ СЃРґРµР»Р°РµРј РєСЂР°СЃРёРІРѕ!</span></h2>
           <p class="contact-subtitle">
-            Напишите мне в Telegram — оперативно отвечу, отвечу на технические вопросы и рассчитаю ориентировочные сроки и стоимость.
+            РќР°РїРёС€РёС‚Рµ РјРЅРµ РІ Telegram вЂ” РѕРїРµСЂР°С‚РёРІРЅРѕ РѕС‚РІРµС‡Сѓ, РѕС‚РІРµС‡Сѓ РЅР° С‚РµС…РЅРёС‡РµСЃРєРёРµ РІРѕРїСЂРѕСЃС‹ Рё СЂР°СЃСЃС‡РёС‚Р°СЋ РѕСЂРёРµРЅС‚РёСЂРѕРІРѕС‡РЅС‹Рµ СЃСЂРѕРєРё Рё СЃС‚РѕРёРјРѕСЃС‚СЊ.
           </p>
 
           <div class="contact-actions">
             <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-              <span>Написать в Telegram @Nuar010</span>
+              <span>РќР°РїРёСЃР°С‚СЊ РІ Telegram @Nuar010</span>
             </a>
             <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>GitHub профиль</span>
+              <span>GitHub РїСЂРѕС„РёР»СЊ</span>
             </a>
           </div>
 
           <div class="contact-details">
-            <span>Локация: Иркутск / Удаленно</span> · 
-            <span>Telegram: <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer">@Nuar010</a></span> · 
+            <span>Р›РѕРєР°С†РёСЏ: РСЂРєСѓС‚СЃРє / РЈРґР°Р»РµРЅРЅРѕ</span> В· 
+            <span>Telegram: <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer">@Nuar010</a></span> В· 
             <span>GitHub: <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer">urasokolik</a></span>
           </div>
         </div>
@@ -598,17 +1354,74 @@
     <div class="container footer-content">
       <div class="footer-left">
         <span class="logo-text">nuar<span class="accent-dot">.</span>dev</span>
-        <span class="footer-copy">© 2026 Юрий Соколов. Все права защищены.</span>
+        <span class="footer-copy">В© 2026 Р®СЂРёР№ РЎРѕРєРѕР»РѕРІ. Р’СЃРµ РїСЂР°РІР° Р·Р°С‰РёС‰РµРЅС‹.</span>
       </div>
       <div class="footer-links">
-        <a href="#projects">Проекты</a>
+        <a href="#projects">РџСЂРѕРµРєС‚С‹</a>
         <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="#top" class="back-to-top">Наверх ↑</a>
+        <a href="#top" class="back-to-top">РќР°РІРµСЂС… в†‘</a>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+// Filter projects by category
+document.addEventListener("DOMContentLoaded", () => {
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter");
+
+      projectCards.forEach(card => {
+        if (filter === "all") {
+          card.classList.remove("hidden");
+        } else {
+          const categories = card.getAttribute("data-category").split(" ");
+          if (categories.includes(filter)) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        }
+      });
+    });
+  });
+
+  // Mobile navigation menu toggle
+  const burgerBtn = document.getElementById("burger-btn");
+  const mainNav = document.getElementById("main-nav");
+
+  if (burgerBtn && mainNav) {
+    burgerBtn.addEventListener("click", () => {
+      mainNav.classList.toggle("active");
+    });
+
+    // Close menu when clicking any nav link
+    const navLinks = mainNav.querySelectorAll(".nav-link");
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("active");
+      });
+    });
+  }
+
+  // Header border glow on scroll
+  const header = document.querySelector(".header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      header.style.borderBottomColor = "rgba(255, 255, 255, 0.15)";
+    } else {
+      header.style.borderBottomColor = "rgba(255, 255, 255, 0.08)";
+    }
+  });
+});
+
+</script>
 </body>
 </html>
