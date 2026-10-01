@@ -1,130 +1,614 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Юрий Соколов — разработчик сайтов, Telegram-ботов, автоматизации и мобильных игр.">
-  <meta name="theme-color" content="#101110">
-  <title>Nuar — разработка, которая работает</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Юрий Соколов (Nuar) — Full-Stack Разработчик & Автоматизация</title>
+  <meta name="description" content="Портфолио Юрия Соколова (Nuar). Разработка Telegram Mini Apps, коммерческих сайтов, ботов и систем автоматизации под ключ.">
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Юрий Соколов (Nuar) — Full-Stack & Telegram Mini Apps">
+  <meta property="og:description" content="Разработка надежных digital-продуктов: Telegram Mini Apps, сайты, боты, бэкенд и автоматизация.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://urasokolik.github.io/nuar-portfolio/">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Nuar, на главную">
-      <span class="brand-mark">N</span>
-      <span>nuar<span class="brand-dot">.</span>dev</span>
-    </a>
-    <nav class="nav" aria-label="Основная навигация">
-      <a href="#work">Проекты</a>
-      <a href="#stack">Стек</a>
-      <a href="#about">Обо мне</a>
-    </nav>
-    <a class="header-contact" href="https://t.me/Nuar010" target="_blank" rel="noreferrer">
-      Написать <span aria-hidden="true">↗</span>
-    </a>
-    <a class="header-github" href="https://github.com/urasokolik" target="_blank" rel="noreferrer" aria-label="GitHub Nuar">
-      GitHub <span aria-hidden="true">↗</span>
-    </a>
-    <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
-      <span></span><span></span>
-    </button>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#top" class="logo">
+        <span class="logo-badge">N</span>
+        <span class="logo-text">nuar<span class="accent-dot">.</span>dev</span>
+      </a>
+
+      <nav class="nav" id="main-nav">
+        <a href="#projects" class="nav-link">Проекты</a>
+        <a href="#services" class="nav-link">Услуги</a>
+        <a href="#stack" class="nav-link">Стек</a>
+        <a href="#workflow" class="nav-link">Процесс</a>
+        <a href="#contact" class="nav-link">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="status-indicator" title="Готов взять новый проект в работу">
+          <span class="status-pulse"></span>
+          <span class="status-text">Open to work</span>
+        </div>
+        <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+          <span>Написать в TG</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <button class="burger-btn" id="burger-btn" aria-label="Открыть меню">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main id="top">
-    <section class="hero section-pad">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> открыт к новым задачам</p>
-        <h1>Код, который<br><em>двигает вперёд.</em></h1>
-        <p class="hero-lead">Создаю сайты, Telegram-ботов и цифровые продукты, которые превращают идеи в понятный пользовательский опыт и реальные результаты.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#work">Смотреть проекты <span>↓</span></a>
-          <a class="button button-quiet" href="https://t.me/Nuar010" target="_blank" rel="noreferrer">Обсудить задачу <span>↗</span></a>
+    <!-- Hero Section -->
+    <section class="hero section">
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="sparkle">⚡</span>
+          <span>Full-Stack · Telegram Mini Apps · Automation</span>
         </div>
-        <div class="hero-meta">
-          <span>Юрий Соколов / Nuar</span>
-          <span>Иркутск, RU</span>
+
+        <h1 class="hero-title">
+          Разрабатываю цифровые продукты, <br>
+          <span class="gradient-text">которые приносят результат.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Превращаю сложные бизнес-задачи в удобные решения: от реактивных <strong>Telegram Mini Apps</strong> и конверсионных <strong>лендингов</strong> до <strong>высоконагруженных баз данных</strong> и <strong>десктопного софта</strong>.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-lg btn-primary">
+            <span>Смотреть работы</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+          </a>
+          <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            <span>Обсудить задачу</span>
+          </a>
         </div>
-      </div>
-      <div class="hero-visual" aria-label="Визуальная панель с примерами работы">
-        <div class="visual-topline"><span>NUAR_SYSTEM / 2026</span><span class="live-label"><i></i> live</span></div>
-        <div class="terminal-window">
-          <div class="terminal-bar"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span><span class="terminal-title">build/product.py</span></div>
-          <div class="terminal-code">
-            <p><b>01</b> <span class="purple">class</span> <span class="blue">Product</span>:</p>
-            <p><b>02</b> &nbsp; <span class="purple">def</span> <span class="yellow">__init__</span>(<span class="orange">self</span>):</p>
-            <p><b>03</b> &nbsp; &nbsp; <span class="orange">self</span>.idea = <span class="green">"your vision"</span></p>
-            <p><b>04</b> &nbsp; &nbsp; <span class="orange">self</span>.logic = <span class="green">"clean"</span></p>
-            <p><b>05</b> &nbsp; &nbsp; <span class="orange">self</span>.result = <span class="blue">ship</span>()</p>
-            <p><b>06</b></p>
-            <p><b>07</b> <span class="comment"># make it useful</span></p>
-            <p><b>08</b> <span class="purple">return</span> <span class="orange">self</span>.result</p>
+
+        <!-- Metrics Bar -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Реализованных проектов</span>
           </div>
-          <div class="terminal-pulse"><span></span><span></span><span></span><strong>build successful</strong></div>
-        </div>
-        <div class="visual-note note-one"><span>01</span><strong>idea → product</strong><small>from first line to launch</small></div>
-        <div class="visual-note note-two"><span>02</span><strong>clarity / speed</strong><small>less noise, more value</small></div>
-        <div class="visual-orbit orbit-one"></div>
-        <div class="visual-orbit orbit-two"></div>
-      </div>
-    </section>
-
-    <section class="ticker" aria-label="Специализация">
-      <div class="ticker-track">
-        <span>WEB DEVELOPMENT</span><i>✳</i><span>TELEGRAM BOTS</span><i>✳</i><span>AUTOMATION</span><i>✳</i><span>UNITY / C#</span><i>✳</i><span>WEB DEVELOPMENT</span><i>✳</i><span>TELEGRAM BOTS</span><i>✳</i>
-      </div>
-    </section>
-
-    <section class="work section-pad" id="work">
-      <div class="section-heading">
-        <div><p class="eyebrow">01 / избранное</p><h2>Проекты, которыми<br><em>можно гордиться.</em></h2></div>
-        <p class="section-intro">Разные задачи, один принцип: делать сложное понятным, а продукт — живым.</p>
-      </div>
-      <div class="projects-grid">
-        <a class="project-card project-featured" href="https://github.com/urasokolik/revolt-orderfall-showcase" target="_blank" rel="noreferrer">
-          <div class="project-visual game-visual"><span class="card-index">01</span><div class="game-sky"></div><div class="game-sun"></div><div class="game-tower"></div><div class="game-floor"></div><span class="visual-caption">MOBILE / UNITY</span></div>
-          <div class="project-info"><div><p class="project-type">Game development</p><h3>Revolt: Orderfall</h3></div><span class="round-arrow">↗</span><p class="project-description">Мобильная игра с мини-играми, прогрессией сцен и монетизацией через Yandex Mobile Ads.</p><div class="tag-row"><span>Unity</span><span>C#</span><span>Android</span></div></div>
-        </a>
-        <a class="project-card" href="https://github.com/urasokolik/lexify-landing-page" target="_blank" rel="noreferrer">
-          <div class="project-visual lexify-visual"><span class="card-index">02</span><div class="browser-mock"><div class="mock-nav"></div><div class="mock-copy"></div><div class="mock-lines"></div><div class="mock-circle"></div></div><span class="visual-caption">LANDING PAGE</span></div>
-          <div class="project-info"><div><p class="project-type">Web design & development</p><h3>Lexify</h3></div><span class="round-arrow">↗</span><p class="project-description">Адаптивный лендинг для волонтёрской школы английского языка.</p><div class="tag-row"><span>HTML</span><span>CSS</span><span>Responsive</span></div></div>
-        </a>
-        <a class="project-card" href="https://github.com/urasokolik/telegram-opt-in-broadcast-bot" target="_blank" rel="noreferrer">
-          <div class="project-visual bot-visual"><span class="card-index">03</span><div class="bot-window"><div class="bot-head">broadcast<span>●</span></div><div class="bot-message">Рассылка готова<br><small>1 284 получателя</small></div><div class="bot-bar"><i></i><i></i><i></i><i></i></div></div><span class="visual-caption">TELEGRAM / PYTHON</span></div>
-          <div class="project-info"><div><p class="project-type">Automation</p><h3>Broadcast Bot</h3></div><span class="round-arrow">↗</span><p class="project-description">Бот с подпиской, паузой, статусами доставки и хранением данных в SQLite.</p><div class="tag-row"><span>Python</span><span>aiogram</span><span>SQLite</span></div></div>
-        </a>
-        <div class="project-card project-service">
-          <div class="service-visual"><span class="service-plus">+</span><span class="service-label">YOUR<br>NEXT<br>PROJECT</span><span class="service-small">04 / open slot</span></div>
-          <div class="project-info"><div><p class="project-type">Available for collaboration</p><h3>Сделаем ваш?</h3></div><a class="round-arrow" href="https://t.me/Nuar010" target="_blank" rel="noreferrer">↗</a><p class="project-description">Расскажите, что нужно собрать. Я помогу превратить задачу в рабочий продукт.</p></div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Сдача в срок & Под ключ</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <span class="stat-number">&lt; 30 мин</span>
+            <span class="stat-label">Время ответа в Telegram</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="stack section-pad" id="stack">
-      <div class="section-heading stack-heading"><div><p class="eyebrow">02 / инструменты</p><h2>Стек без<br><em>шума.</em></h2></div><p class="section-intro">Выбираю технологии под задачу, а не задачу под модный инструмент.</p></div>
-      <div class="stack-layout"><div class="stack-statement"><span class="quote-mark">“</span><p>Хороший код — это когда следующий шаг очевиден.</p><span class="statement-author">— рабочий принцип</span></div><div class="stack-list">
-        <div class="stack-item"><span class="stack-num">01</span><strong>Python</strong><span>боты · API · автоматизация</span></div>
-        <div class="stack-item"><span class="stack-num">02</span><strong>aiogram</strong><span>Telegram · сценарии · UX</span></div>
-        <div class="stack-item"><span class="stack-num">03</span><strong>HTML / CSS</strong><span>лендинги · адаптив · визуал</span></div>
-        <div class="stack-item"><span class="stack-num">04</span><strong>Unity / C#</strong><span>мобильные игры · Android</span></div>
-        <div class="stack-item"><span class="stack-num">05</span><strong>SQLite / Render</strong><span>данные · деплой · поддержка</span></div>
-      </div></div>
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Портфолио</div>
+          <h2 class="section-title">Избранные проекты и кейсы</h2>
+          <p class="section-subtitle">Реальные коммерческие решения, сервисы и продукты для бизнеса</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">Все работы</button>
+          <button class="filter-btn" data-filter="tma">Telegram & Mini Apps</button>
+          <button class="filter-btn" data-filter="web">Веб-сайты & Лендинги</button>
+          <button class="filter-btn" data-filter="automation">Автоматизация & Софт</button>
+          <button class="filter-btn" data-filter="backend">Бэкенд & Базы данных</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+          <!-- 1. AdBot -->
+          <div class="project-card" data-category="tma backend">
+            <div class="project-img-wrap">
+              <img src="assets/projects/adbot-miniapp-platform.png" alt="AdBot Telegram Mini App" loading="lazy">
+              <span class="category-badge">Telegram Mini App</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Next.js 14</span>
+                <span class="tag">NestJS</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Prisma</span>
+                <span class="tag">ЮKassa</span>
+                <span class="tag">BullMQ</span>
+              </div>
+              <h3 class="project-title">AdBot Marketplace — Биржа рекламы в Telegram</h3>
+              <p class="project-desc">
+                Полнофункциональная экосистема для автоматизированной покупки и продажи рекламы в каналах: реактивный Web App (TMA), финансовый процессинг, безопасная сделка (Escrow) и фоновые очереди.
+              </p>
+              <div class="project-features">
+                <div>✓ Web App кабинет рекламодателя и владельца каналов</div>
+                <div>✓ Бухгалтерская модель счетов и заморозка баланса</div>
+                <div>✓ Прием платежей через ЮKassa и авто-проверка выходов постов</div>
+              </div>
+              <div class="project-footer">
+                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Обсудить похожий проект</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. AutoCAD.PRO -->
+          <div class="project-card" data-category="web">
+            <div class="project-img-wrap">
+              <img src="assets/projects/autocad-pro-landing.png" alt="AutoCAD Landing Page" loading="lazy">
+              <span class="category-badge">Commercial Web</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">HTML5 / CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">3D Isometric</span>
+                <span class="tag">High-Conversion UX</span>
+              </div>
+              <h3 class="project-title">AutoCAD.PRO — Очный инженерный курс в Краснодаре</h3>
+              <p class="project-desc">
+                Высококонверсионный промо-сайт в строгой эстетике CAD-систем для набора студентов-инженеров. Акцентная сетка, 3D-модель строительных конструкций и плавная адаптивная верстка.
+              </p>
+              <div class="project-features">
+                <div>✓ Инженерный Dark-UI с акцентной типографикой</div>
+                <div>✓ Воронка лидогенерации на пробные занятия</div>
+                <div>✓ Скорость загрузки менее 1 секунды без тяжелых библиотек</div>
+              </div>
+              <div class="project-footer">
+                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Заказать продающий лендинг</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Background Clicker -->
+          <div class="project-card" data-category="automation">
+            <div class="project-img-wrap">
+              <img src="assets/projects/bg-clicker-desktop.png" alt="Background Clicker Desktop App" loading="lazy">
+              <span class="category-badge">Desktop Software</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Python 3.12</span>
+                <span class="tag">Win32 API</span>
+                <span class="tag">Tkinter GUI</span>
+                <span class="tag">PyInstaller</span>
+              </div>
+              <h3 class="project-title">Background Clicker — Win32 Desktop Automation Tool</h3>
+              <p class="project-desc">
+                Десктопная программа с графическим интерфейсом для циклической автоматизации кликов на втором мониторе через низкоуровневые Win32 сообщения без перемещения курсора мыши и без потери фокуса активным окном.
+              </p>
+              <div class="project-features">
+                <div>✓ Эмуляция PostMessage без захвата курсора мыши</div>
+                <div>✓ 4 независимых сценария и таймер захвата координат</div>
+                <div>✓ Глобальные хоткеи (Shift+1..4, F12) и портативный .exe</div>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Смотреть код на GitHub</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. MusicStore Database -->
+          <div class="project-card" data-category="backend">
+            <div class="project-img-wrap">
+              <img src="assets/projects/music-shop-database.png" alt="MusicStore PostgreSQL Database" loading="lazy">
+              <span class="category-badge">Database Architecture</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">PL/pgSQL</span>
+                <span class="tag">Database Design (3NF)</span>
+                <span class="tag">Triggers & Procedures</span>
+              </div>
+              <h3 class="project-title">MusicStore Enterprise DB — Реляционная база данных</h3>
+              <p class="project-desc">
+                Проектирование и реализация с нуля промышленной СУБД для интернет-магазина: 14 таблиц в 3-й нормальной форме, хранимые процедуры, автоматические триггеры складского учета, аудит и сценарии резервного копирования.
+              </p>
+              <div class="project-features">
+                <div>✓ Нормализованная архитектура 3NF с ограничениями целостности</div>
+                <div>✓ Бизнес-логика на уровне БД (PL/pgSQL триггеры и функции)</div>
+                <div>✓ Автоматизированные бэкапы pg_dump и отказоустойчивость</div>
+              </div>
+              <div class="project-footer">
+                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Заказать архитектуру БД</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. FileBrowser Cloud -->
+          <div class="project-card" data-category="backend automation">
+            <div class="project-img-wrap">
+              <img src="assets/projects/enterprise-filebrowser-cloud.png" alt="FileBrowser Cloud Storage" loading="lazy">
+              <span class="category-badge">Cloud & DevOps</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Golang</span>
+                <span class="tag">Vue 3 / Vite</span>
+                <span class="tag">PDF.js</span>
+                <span class="tag">LibreOffice CLI</span>
+                <span class="tag">Linux / Nginx</span>
+              </div>
+              <h3 class="project-title">FileBrowser Cloud Suite — Облачное корпоративное хранилище</h3>
+              <p class="project-desc">
+                Кастомизация и развертывание enterprise-хранилища на Linux: фоновая headless-конвертация офисных документов и чертежей в PDF, встроенный просмотрщик, редактор аннотаций, корзина и защищенный шаринг.
+              </p>
+              <div class="project-features">
+                <div>✓ Конвертация DOCX/XLSX в PDF на лету через LibreOffice</div>
+                <div>✓ Встроенный PDF.js просмотрщик и PDF Overlay Editor</div>
+                <div>✓ Деплой на боевой Linux сервер с Nginx и SSL</div>
+              </div>
+              <div class="project-footer">
+                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Обсудить DevOps & Облака</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Centralny -->
+          <div class="project-card" data-category="web">
+            <div class="project-img-wrap">
+              <img src="assets/projects/centralny-bar-shop.png" alt="Магазин-бар Центральный" loading="lazy">
+              <span class="category-badge">E-Commerce Web</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">HTML5 / CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">E-Commerce Catalog</span>
+                <span class="tag">Demo Admin</span>
+              </div>
+              <h3 class="project-title">Магазин-бар «Центральный» в Щёлково</h3>
+              <p class="project-desc">
+                Сайт магазина-бара крафтовых напитков и кухни с интерактивным каталогом товаров, демо-админкой для персонала, блоком контактов и кнопкой прокладки маршрута.
+              </p>
+              <div class="project-features">
+                <div>✓ Интерактивный фильтруемый каталог продукции</div>
+                <div>✓ Демо-панель управления позициями</div>
+                <div>✓ Адаптация под все мобильные устройства</div>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/urasokolik/centralny-beer-shop" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Репозиторий проекта</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Epoha Veshchey -->
+          <div class="project-card" data-category="web">
+            <div class="project-img-wrap">
+              <img src="assets/projects/epoha-veshchey-vintage.png" alt="Эпоха вещей СССР" loading="lazy">
+              <span class="category-badge">JAMstack Store</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">HTML5 / CSS3</span>
+                <span class="tag">Netlify CMS</span>
+                <span class="tag">Vintage UI</span>
+                <span class="tag">SEO Friendly</span>
+              </div>
+              <h3 class="project-title">«Эпоха вещей СССР» — Семейный магазин винтажа</h3>
+              <p class="project-desc">
+                Атмосферный интернет-магазин советского антиквариата с админкой Netlify CMS, позволяющей клиенту самостоятельно добавлять новые лоты, редактировать цены и вести блог историй.
+              </p>
+              <div class="project-features">
+                <div>✓ Уникальный авторский дизайн в стиле советской эстетики</div>
+                <div>✓ Админ-панель Netlify CMS без серверных расходов</div>
+                <div>✓ Каталог с фильтрацией по категориям (хрусталь, фарфор, стекло)</div>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/urasokolik/epoha-veshchey-site" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Репозиторий проекта</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Lexify -->
+          <div class="project-card" data-category="web">
+            <div class="project-img-wrap">
+              <img src="assets/projects/lexify-english-school.png" alt="Lexify English School" loading="lazy">
+              <span class="category-badge">Education Landing</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">HTML5 / CSS3</span>
+                <span class="tag">Responsive UI</span>
+                <span class="tag">GitHub Pages</span>
+              </div>
+              <h3 class="project-title">Lexify — Онлайн-школа английского языка</h3>
+              <p class="project-desc">
+                Адаптивный промо-лендинг для волонтёрской школы английского языка. Мягкая дружелюбная айдентика, интерактивные карточки уровней, презентация преподавателей и форма записи.
+              </p>
+              <div class="project-features">
+                <div>✓ Дружелюбный дизайн с пастельными тонами</div>
+                <div>✓ Адаптивная сетка под смартфоны и планшеты</div>
+                <div>✓ Мгновенная загрузка через GitHub Pages</div>
+              </div>
+              <div class="project-footer">
+                <a href="https://urasokolik.github.io/lexify-landing-page/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Открыть живой сайт</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <section class="about section-pad" id="about">
-      <div class="about-grid"><div><p class="eyebrow">03 / немного обо мне</p><h2>Сначала<br><em>смысл.</em></h2></div><div class="about-copy"><p class="about-lead">Я Юрий — разработчик из Иркутска. Собираю цифровые продукты для людей и бизнеса: от первого экрана лендинга до логики бота, который каждый день экономит часы работы.</p><p>Мне нравится находить простую форму для сложной идеи, задавать правильные вопросы и доводить проект до состояния, когда им приятно пользоваться.</p><div class="about-facts"><div><strong>3+</strong><span>года в разработке</span></div><div><strong>4</strong><span>проекта в портфолио</span></div><div><strong>∞</strong><span>любопытства к новому</span></div></div></div></div>
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Услуги</div>
+          <h2 class="section-title">Чем я могу помочь вашему бизнесу</h2>
+          <p class="section-subtitle">Полный цикл разработки: от проектирования идеи до запуска и поддержки</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3 class="service-title">Telegram Mini Apps & Боты</h3>
+            <p class="service-desc">
+              Разработка Web Apps внутри Telegram на React/Next.js: интернет-магазины, сервисы записи, каталоги, системы лояльности и платежи. Любые сценарии ботов на Python (aiogram) и Node.js.
+            </p>
+            <ul class="service-list">
+              <li>Интеграция с ЮKassa, крипто-эквайрингом, СБП</li>
+              <li>Синхронизация с 1С, CRM и внешними API</li>
+              <li>Личные кабинеты и веб-интерфейсы</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3 class="service-title">Коммерческие сайты & Лендинги</h3>
+            <p class="service-desc">
+              Создание современных продающих сайтов, промо-страниц и каталогов. Чистая верстка, быстрая загрузка (&lt;1 сек), идеальная адаптация под мобильные устройства и базовое SEO.
+            </p>
+            <ul class="service-list">
+              <li>Высокая конверсия и понятный UX</li>
+              <li>Интеграция админ-панелей для легкого редактирования</li>
+              <li>Подключение аналитики (Яндекс Метрика, GA4)</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3 class="service-title">Автоматизация & Парсинг данных</h3>
+            <p class="service-desc">
+              Автоматизация рутинных задач сотрудника: фоновые кликеры, сбор баз данных, мониторинг цен конкурентов, рассылки и синхронизация таблиц.
+            </p>
+            <ul class="service-list">
+              <li>Парсинг сайтов и закрытых каталогов (Playwright/API)</li>
+              <li>Десктопные утилиты на Python/Win32</li>
+              <li>Оповещения в Telegram о важных событиях</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🗄️</div>
+            <h3 class="service-title">Бэкенд, Базы данных & DevOps</h3>
+            <p class="service-desc">
+              Проектирование надежной серверной архитектуры: проектирование БД PostgreSQL/MySQL, написание REST API, настройка очередей (Redis/BullMQ) и развертывание на Linux-серверах.
+            </p>
+            <ul class="service-list">
+              <li>Оптимизация сложных SQL-запросов и триггеры</li>
+              <li>Настройка Docker, Nginx, SSL сертификатов</li>
+              <li>Автоматизация бэкапов и мониторинг</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="contact section-pad" id="contact">
-      <div class="contact-inner"><p class="eyebrow">04 / на связи</p><h2>Есть идея?<br><em>Давайте соберём.</em></h2><a class="contact-link" href="https://t.me/Nuar010" target="_blank" rel="noreferrer"><span>@Nuar010</span><span>Написать в Telegram ↗</span></a></div>
+    <!-- Tech Stack Section -->
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Технологии</div>
+          <h2 class="section-title">Стек и инструменты разработки</h2>
+          <p class="section-subtitle">Использую проверенные современные технологии для надежности и скорости</p>
+        </div>
+
+        <div class="stack-grid">
+          <div class="stack-group">
+            <div class="stack-group-title">Frontend & UI</div>
+            <div class="stack-items">
+              <span class="tech-pill">Next.js 14</span>
+              <span class="tech-pill">React 18</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Vue 3</span>
+              <span class="tech-pill">HTML5 / Modern CSS</span>
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">Vite</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <div class="stack-group-title">Backend & APIs</div>
+            <div class="stack-items">
+              <span class="tech-pill">Python 3.12</span>
+              <span class="tech-pill">FastAPI / Flask</span>
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">NestJS</span>
+              <span class="tech-pill">Golang</span>
+              <span class="tech-pill">REST & Webhooks</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <div class="stack-group-title">Telegram & Боты</div>
+            <div class="stack-items">
+              <span class="tech-pill">Telegram Mini Apps (TMA)</span>
+              <span class="tech-pill">aiogram 3.x</span>
+              <span class="tech-pill">Telegram Bot API</span>
+              <span class="tech-pill">Telegraf</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <div class="stack-group-title">Databases & Queues</div>
+            <div class="stack-items">
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">Prisma ORM</span>
+              <span class="tech-pill">Redis</span>
+              <span class="tech-pill">BullMQ</span>
+              <span class="tech-pill">SQLite</span>
+              <span class="tech-pill">SQL Procedures</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <div class="stack-group-title">DevOps, OS & Payments</div>
+            <div class="stack-items">
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Linux (Ubuntu)</span>
+              <span class="tech-pill">Nginx / SSL</span>
+              <span class="tech-pill">Win32 API</span>
+              <span class="tech-pill">ЮKassa API</span>
+              <span class="tech-pill">Git / GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Прозрачность</div>
+          <h2 class="section-title">Как строится работа</h2>
+          <p class="section-subtitle">Простой и понятный процесс от первого контакта до релиза</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Анализ & ТЗ</h3>
+            <p class="step-desc">
+              Обсуждаем вашу задачу, цели и бюджет. Помогаю составить чёткое ТЗ без лишнего оверинжиниринга.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Прототип & MVP</h3>
+            <p class="step-desc">
+              Быстро собираю рабочий прототип или структуру проекта, чтобы вы сразу увидели, как продукт будет работать.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Разработка & Тесты</h3>
+            <p class="step-desc">
+              Пишу чистый, масштабируемый код, настраиваю БД, подключаю платежи и тестирую на всех устройствах.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <h3 class="step-title">Запуск & Инструкции</h3>
+            <p class="step-desc">
+              Разворачиваю проект на сервере, настраиваю домен/SSL, передаю исходники и видео-инструкции по управлению.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-badge">Связаться со мной</div>
+          <h2 class="contact-title">Есть проект или идея?<br><span class="gradient-text">Давайте сделаем красиво!</span></h2>
+          <p class="contact-subtitle">
+            Напишите мне в Telegram — оперативно отвечу, отвечу на технические вопросы и рассчитаю ориентировочные сроки и стоимость.
+          </p>
+
+          <div class="contact-actions">
+            <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>Написать в Telegram @Nuar010</span>
+            </a>
+            <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub профиль</span>
+            </a>
+          </div>
+
+          <div class="contact-details">
+            <span>Локация: Иркутск / Удаленно</span> · 
+            <span>Telegram: <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer">@Nuar010</a></span> · 
+            <span>GitHub: <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer">urasokolik</a></span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer section-pad"><span>© 2026 Nuar / Юрий Соколов</span><span>Сделано с вниманием к деталям</span><a href="https://github.com/urasokolik" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top">Наверх ↑</a></footer>
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="logo-text">nuar<span class="accent-dot">.</span>dev</span>
+        <span class="footer-copy">© 2026 Юрий Соколов. Все права защищены.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#projects">Проекты</a>
+        <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="#top" class="back-to-top">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
