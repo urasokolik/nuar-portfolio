@@ -4,776 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Юрий Соколов (Nuar) — Full-Stack Разработчик & Автоматизация</title>
-  <meta name="description" content="Портфолио Юрия Соколова (Nuar). Разработка Telegram Mini Apps, коммерческих сайтов, ботов и систем автоматизации под ключ.">
-  <meta name="theme-color" content="#090d16">
+  <meta name="description" content="Портфолио Юрия Соколова (Nuar). Telegram Mini Apps, коммерческие веб-сервисы, базы данных и системы автоматизации под ключ.">
+  <meta name="theme-color" content="#09090b">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Юрий Соколов (Nuar) — Full-Stack & Telegram Mini Apps">
-  <meta property="og:description" content="Разработка надежных digital-продуктов: Telegram Mini Apps, сайты, боты, бэкенд и автоматизация.">
+  <meta property="og:description" content="Разработка цифровых продуктов под ключ: Telegram Mini Apps, веб-порталы с CMS, архитектура БД и софт автоматизации.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://urasokolik.github.io/nuar-portfolio/">
 
+  <!-- Fonts: Inter / SF-styled metrics -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-:root {
-  --bg-main: #090d16;
-  --bg-card: rgba(17, 24, 39, 0.7);
-  --bg-card-hover: rgba(26, 35, 54, 0.85);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(59, 130, 246, 0.4);
-  
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
-
-  --accent-cyan: #38bdf8;
-  --accent-blue: #3b82f6;
-  --accent-emerald: #10b981;
-  --accent-purple: #8b5cf6;
-
-  --font-main: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-  
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  color-scheme: dark;
-}
-
-body {
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  font-family: var(--font-main);
-  line-height: 1.6;
-  position: relative;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-.ambient-glow {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(140px);
-  pointer-events: none;
-  z-index: 0;
-}
-.glow-1 {
-  width: 500px;
-  height: 500px;
-  top: -100px;
-  left: -150px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.12), transparent 70%);
-}
-.glow-2 {
-  width: 600px;
-  height: 600px;
-  top: 30%;
-  right: -200px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent 70%);
-}
-.glow-3 {
-  width: 700px;
-  height: 700px;
-  bottom: 0;
-  left: 10%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.08), transparent 70%);
-}
-
-.container {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 24px;
-  position: relative;
-  z-index: 1;
-}
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(9, 13, 22, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-color);
-  padding: 16px 0;
-}
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--text-main);
-}
-.logo-badge {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 16px;
-  color: #0b0f17;
-  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
-}
-.logo-text {
-  font-weight: 700;
-  font-size: 19px;
-  letter-spacing: -0.5px;
-}
-.accent-dot {
-  color: var(--accent-cyan);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.nav-link {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 14.5px;
-  font-weight: 500;
-  transition: var(--transition);
-}
-.nav-link:hover {
-  color: var(--text-main);
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.status-indicator {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  border-radius: 999px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: #34d399;
-}
-.status-pulse {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.3); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
-}
-
-.burger-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  flex-direction: column;
-  gap: 6px;
-}
-.burger-btn span {
-  width: 22px;
-  height: 2px;
-  background: var(--text-main);
-  border-radius: 2px;
-  transition: var(--transition);
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
-  transition: var(--transition);
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-.btn-sm {
-  padding: 7px 14px;
-  font-size: 13px;
-}
-.btn-lg {
-  padding: 13px 26px;
-  font-size: 15px;
-}
-.btn-primary {
-  background: linear-gradient(135deg, #0284c7, #2563eb);
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
-}
-.btn-outline {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--border-color);
-  color: var(--text-main);
-}
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.hero {
-  padding: 100px 0 80px;
-  text-align: center;
-}
-.hero-content {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  color: var(--accent-cyan);
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-.hero-title {
-  font-size: 54px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.15;
-  margin-bottom: 24px;
-}
-.gradient-text {
-  background: linear-gradient(135deg, #38bdf8 10%, #818cf8 60%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero-subtitle {
-  font-size: 18px;
-  color: var(--text-muted);
-  line-height: 1.65;
-  margin-bottom: 36px;
-  max-width: 760px;
-}
-.hero-cta-group {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 60px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.hero-stats {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 36px;
-  padding: 24px 36px;
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  width: 100%;
-  max-width: 740px;
-}
-.stat-card {
-  text-align: center;
-}
-.stat-number {
-  display: block;
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--accent-cyan);
-  line-height: 1.2;
-}
-.stat-label {
-  font-size: 13px;
-  color: var(--text-dim);
-  font-weight: 500;
-}
-.stat-divider {
-  width: 1px;
-  height: 36px;
-  background: var(--border-color);
-}
-
-.section {
-  padding: 90px 0;
-}
-.section-header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 50px;
-}
-.section-tag {
-  display: inline-block;
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--accent-cyan);
-  margin-bottom: 12px;
-}
-.section-title {
-  font-size: 38px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 14px;
-}
-.section-subtitle {
-  font-size: 16px;
-  color: var(--text-muted);
-}
-
-.filter-tabs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-.filter-btn {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-size: 13.5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-}
-.filter-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text-main);
-}
-.filter-btn.active {
-  background: var(--accent-blue);
-  border-color: var(--accent-blue);
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-.project-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-}
-.project-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--border-hover);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
-}
-.project-card.hidden {
-  display: none;
-}
-
-.project-img-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: #0d121f;
-  border-bottom: 1px solid var(--border-color);
-}
-.project-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-.project-card:hover .project-img-wrap img {
-  transform: scale(1.03);
-}
-.category-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: rgba(9, 13, 22, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--accent-cyan);
-  padding: 5px 12px;
-  border-radius: 6px;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.project-body {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 14px;
-}
-.tag {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #cbd5e1;
-  padding: 3px 9px;
-  border-radius: 4px;
-  font-size: 11.5px;
-  font-family: var(--font-mono);
-  font-weight: 500;
-}
-.project-title {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 10px;
-  color: var(--text-main);
-}
-.project-desc {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-.project-features {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 13px;
-  color: #a0aec0;
-  margin-bottom: 20px;
-}
-.project-footer {
-  margin-top: auto;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-color);
-}
-.link-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--accent-cyan);
-  text-decoration: none;
-  font-size: 13.5px;
-  font-weight: 600;
-  transition: var(--transition);
-}
-.link-btn:hover {
-  color: #ffffff;
-  transform: translateX(3px);
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-.service-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 32px;
-  transition: var(--transition);
-}
-.service-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-}
-.service-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-.service-title {
-  font-size: 21px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.service-desc {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 18px;
-}
-.service-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 13.5px;
-  color: #cbd5e1;
-}
-.service-list li::before {
-  content: "•";
-  color: var(--accent-cyan);
-  font-weight: bold;
-  display: inline-block;
-  width: 14px;
-}
-
-.stack-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.stack-group {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 24px;
-}
-.stack-group-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--accent-cyan);
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 10px;
-}
-.stack-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.tech-pill {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 12.5px;
-  font-family: var(--font-mono);
-  color: #e2e8f0;
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.step-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 26px 20px;
-  position: relative;
-}
-.step-num {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--accent-cyan);
-  opacity: 0.8;
-  line-height: 1;
-  margin-bottom: 14px;
-  font-family: var(--font-mono);
-}
-.step-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.step-desc {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-.contact-box {
-  background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.15), transparent 60%),
-              radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.15), transparent 60%),
-              #101726;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: var(--radius-lg);
-  padding: 60px 40px;
-  text-align: center;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-}
-.contact-badge {
-  display: inline-block;
-  padding: 6px 14px;
-  background: rgba(59, 130, 246, 0.2);
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  color: #93c5fd;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-.contact-title {
-  font-size: 42px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 18px;
-}
-.contact-subtitle {
-  font-size: 17px;
-  color: var(--text-muted);
-  max-width: 640px;
-  margin: 0 auto 36px;
-  line-height: 1.6;
-}
-.contact-actions {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
-}
-.contact-details {
-  font-size: 14px;
-  color: var(--text-dim);
-}
-.contact-details a {
-  color: var(--accent-cyan);
-  text-decoration: none;
-}
-.contact-details a:hover {
-  text-decoration: underline;
-}
-
-.footer {
-  border-top: 1px solid var(--border-color);
-  padding: 32px 0;
-  margin-top: 60px;
-}
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.footer-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.footer-copy {
-  font-size: 13px;
-  color: var(--text-dim);
-}
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 13.5px;
-}
-.footer-links a {
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: var(--transition);
-}
-.footer-links a:hover {
-  color: var(--text-main);
-}
-.back-to-top {
-  color: var(--accent-cyan) !important;
-}
-
-@media (max-width: 1024px) {
-  .hero-title { font-size: 44px; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .steps-grid { grid-template-columns: repeat(2, 1fr); }
-  .stack-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-  .header { padding: 12px 0; }
-  .nav {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: #090d16;
-    border-bottom: 1px solid var(--border-color);
-    padding: 24px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-    display: none;
-  }
-  .nav.active {
-    display: flex;
-  }
-  .burger-btn {
-    display: flex;
-  }
-  .hero { padding: 60px 0 40px; }
-  .hero-title { font-size: 34px; letter-spacing: -0.5px; }
-  .hero-subtitle { font-size: 15px; }
-  .hero-stats { flex-direction: column; gap: 16px; padding: 20px; }
-  .stat-divider { width: 100%; height: 1px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .steps-grid { grid-template-columns: 1fr; }
-  .stack-grid { grid-template-columns: 1fr; }
-  .contact-title { font-size: 30px; }
-  .contact-box { padding: 40px 20px; }
-}
-
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-  <div class="ambient-glow glow-3"></div>
+  <div class="bg-subtle-glow"></div>
 
+  <!-- Header / Navigation -->
   <header class="header">
-    <div class="container nav-container">
-      <a href="#top" class="logo">
-        <span class="logo-badge">N</span>
-        <span class="logo-text">nuar<span class="accent-dot">.</span>dev</span>
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="nuar.dev">
+        <span class="logo-symbol">N</span>
+        <span class="logo-text">nuar<span class="logo-ext">.dev</span></span>
       </a>
 
-      <nav class="nav" id="main-nav">
+      <nav class="nav-menu" id="nav-menu" aria-label="Основная навигация">
         <a href="#projects" class="nav-link">Проекты</a>
         <a href="#services" class="nav-link">Услуги</a>
         <a href="#stack" class="nav-link">Стек</a>
@@ -782,15 +40,15 @@ body {
       </nav>
 
       <div class="header-actions">
-        <div class="status-indicator" title="Готов взять новый проект в работу">
-          <span class="status-pulse"></span>
-          <span class="status-text">Open to work</span>
+        <div class="status-badge" title="Открыт к новым заказам и проектам">
+          <span class="status-dot"></span>
+          <span>Open to work</span>
         </div>
         <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-          <span>Написать в TG</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          <span>Написать</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </a>
-        <button class="burger-btn" id="burger-btn" aria-label="Открыть меню">
+        <button class="burger-btn" id="burger-btn" aria-label="Открыть меню" aria-expanded="false">
           <span></span><span></span>
         </button>
       </div>
@@ -798,562 +56,693 @@ body {
   </header>
 
   <main id="top">
-    <section class="hero section">
-      <div class="container hero-content">
-        <div class="hero-badge">
-          <span class="sparkle">⚡</span>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-accent">Portfolio</span>
+          <span>·</span>
           <span>Full-Stack · Telegram Mini Apps · Automation</span>
         </div>
 
         <h1 class="hero-title">
-          Разрабатываю цифровые продукты, <br>
-          <span class="gradient-text">которые приносят результат.</span>
+          Разработка цифровых продуктов<br>
+          <span class="hero-title-muted">с инженерной точностью</span>
         </h1>
 
         <p class="hero-subtitle">
-          Превращаю сложные бизнес-задачи в удобные решения: от реактивных <strong>Telegram Mini Apps</strong> и конверсионных <strong>лендингов</strong> до <strong>высоконагруженных баз данных</strong> и <strong>десктопного софта</strong>.
+          Проектирую и создаю решения для реального бизнеса: от реактивных <strong>Telegram Mini Apps</strong> и порталов с автономными <strong>CMS</strong> до оптимизированных <strong>PostgreSQL баз данных</strong> и софта автоматизации.
         </p>
 
-        <div class="hero-cta-group">
+        <div class="hero-actions">
           <a href="#projects" class="btn btn-lg btn-primary">
             <span>Смотреть работы</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
           </a>
-          <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
             <span>Обсудить задачу</span>
           </a>
         </div>
 
-        <div class="hero-stats">
-          <div class="stat-card">
-            <span class="stat-number">10+</span>
-            <span class="stat-label">Реализованных проектов</span>
+        <div class="hero-facts-bar">
+          <div class="fact-item">
+            <span class="fact-value">10+</span>
+            <span class="fact-label">Сданных проектов</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-card">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Сдача в срок & Под ключ</span>
+          <div class="fact-item">
+            <span class="fact-value">&lt; 0.4s</span>
+            <span class="fact-label">Средний отклик UI</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-card">
-            <span class="stat-number">&lt; 30 мин</span>
-            <span class="stat-label">Время ответа в Telegram</span>
+          <div class="fact-item">
+            <span class="fact-value">100%</span>
+            <span class="fact-label">Сдача в срок</span>
+          </div>
+          <div class="fact-item">
+            <span class="fact-value">UTC+8</span>
+            <span class="fact-label">Братск / Удаленно</span>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Projects Section -->
     <section class="section" id="projects">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Портфолио</div>
+          <div class="section-eyebrow">Портфолио</div>
           <h2 class="section-title">Избранные проекты и кейсы</h2>
-          <p class="section-subtitle">Реальные коммерческие решения, сервисы и продукты для бизнеса</p>
+          <p class="section-subtitle">Реальные коммерческие продукты, веб-сервисы и прикладной софт</p>
         </div>
 
-        <div class="filter-tabs">
-          <button class="filter-btn active" data-filter="all">Все работы</button>
-          <button class="filter-btn" data-filter="tma">Telegram & Mini Apps</button>
-          <button class="filter-btn" data-filter="web">Веб-сайты & Лендинги</button>
-          <button class="filter-btn" data-filter="automation">Автоматизация & Софт</button>
-          <button class="filter-btn" data-filter="backend">Бэкенд & Базы данных</button>
+        <!-- Apple Segmented Control Filter -->
+        <div class="segmented-control-wrap">
+          <div class="segmented-control" role="tablist" aria-label="Фильтрация проектов">
+            <button class="segment-btn active" data-filter="all" role="tab">Все проекты</button>
+            <button class="segment-btn" data-filter="tma" role="tab">Telegram & TMA</button>
+            <button class="segment-btn" data-filter="web" role="tab">Веб-сайты & CMS</button>
+            <button class="segment-btn" data-filter="automation" role="tab">Автоматизация & Софт</button>
+            <button class="segment-btn" data-filter="backend" role="tab">Бэкенд & БД</button>
+          </div>
         </div>
 
         <div class="projects-grid">
 
-          <!-- 1. AdBot -->
-          <div class="project-card" data-category="tma backend">
-            <div class="project-img-wrap">
-              <img src="assets/projects/adbot-miniapp-platform.png" alt="AdBot Telegram Mini App" loading="lazy">
-              <span class="category-badge">Telegram Mini App</span>
+          <!-- 1. AdBot Marketplace -->
+          <article class="project-card" data-category="tma backend">
+            <div class="project-media">
+              <img src="assets/projects/adbot-miniapp-platform.png" alt="AdBot Marketplace TMA" loading="lazy">
+              <span class="project-badge">Telegram Mini App</span>
             </div>
-            <div class="project-body">
+            <div class="project-content">
               <div class="project-tags">
-                <span class="tag">Next.js 14</span>
-                <span class="tag">NestJS</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Prisma</span>
-                <span class="tag">ЮKassa</span>
-                <span class="tag">BullMQ</span>
+                <span class="tech-tag">Next.js 14</span>
+                <span class="tech-tag">NestJS</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Prisma</span>
+                <span class="tech-tag">BullMQ</span>
+                <span class="tech-tag">ЮKassa</span>
               </div>
               <h3 class="project-title">AdBot Marketplace — Биржа рекламы в Telegram</h3>
               <p class="project-desc">
-                Полнофункциональная экосистема для автоматизированной покупки и продажи рекламы в каналах: реактивный Web App (TMA), финансовый процессинг, безопасная сделка (Escrow) и фоновые очереди.
+                Комплексная экосистема автоматизации покупки и размещения рекламы в каналах: реактивный Web App (TMA), финансовый процессинг со сделками Escrow и фоновые очереди.
               </p>
-              <div class="project-features">
-                <div>✓ Web App кабинет рекламодателя и владельца каналов</div>
-                <div>✓ Бухгалтерская модель счетов и заморозка баланса</div>
-                <div>✓ Прием платежей через ЮKassa и авто-проверка выходов постов</div>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Личный кабинет рекламодателя и владельца каналов внутри Telegram</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Безопасная сделка (Escrow) с автоматической заморозкой и выплатой</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Фоновая проверка выхода постов и интеграция эквайринга</span>
+                </div>
               </div>
               <div class="project-footer">
-                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Обсудить похожий проект</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>Обсудить проект</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- 2. AutoCAD.PRO -->
-          <div class="project-card" data-category="web">
-            <div class="project-img-wrap">
-              <img src="assets/projects/autocad-pro-landing.png" alt="AutoCAD Landing Page" loading="lazy">
-              <span class="category-badge">Commercial Web</span>
+          <!-- 2. АНО «ГЛАС ДОБРА» -->
+          <article class="project-card" data-category="web">
+            <div class="project-media">
+              <img src="assets/projects/glas-dobra-landing.png" alt="Портал АНО ГЛАС ДОБРА" loading="lazy">
+              <span class="project-badge">Commercial Portal & CMS</span>
             </div>
-            <div class="project-body">
+            <div class="project-content">
               <div class="project-tags">
-                <span class="tag">HTML5 / CSS3</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">3D Isometric</span>
-                <span class="tag">High-Conversion UX</span>
-              </div>
-              <h3 class="project-title">AutoCAD.PRO — Очный инженерный курс в Краснодаре</h3>
-              <p class="project-desc">
-                Высококонверсионный промо-сайт в строгой эстетике CAD-систем для набора студентов-инженеров. Акцентная сетка, 3D-модель строительных конструкций и плавная адаптивная верстка.
-              </p>
-              <div class="project-features">
-                <div>✓ Инженерный Dark-UI с акцентной типографикой</div>
-                <div>✓ Воронка лидогенерации на пробные занятия</div>
-                <div>✓ Скорость загрузки менее 1 секунды без тяжелых библиотек</div>
-              </div>
-              <div class="project-footer">
-                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Заказать продающий лендинг</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. АНО «ГЛАС ДОБРА» -->
-          <div class="project-card" data-category="web">
-            <div class="project-img-wrap">
-              <img src="assets/projects/glas-dobra-landing.png" alt="АНО «ГЛАС ДОБРА» — Официальный портал с CMS" loading="lazy">
-              <span class="category-badge">Commercial Web & CMS</span>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">HTML5 / CSS3</span>
-                <span class="tag">JavaScript (ES6+)</span>
-                <span class="tag">Zero-Framework</span>
-                <span class="tag">Custom CMS / Admin</span>
-                <span class="tag">7-ФЗ & 152-ФЗ РФ</span>
-                <span class="tag">Netlify CI/CD</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">Zero-Framework</span>
+                <span class="tech-tag">Custom CMS</span>
+                <span class="tech-tag">7-ФЗ & 152-ФЗ РФ</span>
+                <span class="tech-tag">Netlify CI/CD</span>
               </div>
               <h3 class="project-title">АНО «ГЛАС ДОБРА» — Официальный портал с автономной CMS</h3>
               <p class="project-desc">
-                Масштабный портал автономной некоммерческой организации поддержки социальных и медиапроектов. С нуля разработана встроенная автономная CMS-панель управления, премодерация отзывов, обработка входящих заявок волонтеров и интеграция с Telegram.
+                Масштабный портал автономной некоммерческой организации поддержки социальных проектов. Разработана встроенная автономная CMS для редактирования контента, модерации отзывов и приема заявок волонтеров.
               </p>
-              <div class="project-features">
-                <div>✓ Строгое соответствие законодательству РФ для НКО (Минюст, Устав, 152-ФЗ)</div>
-                <div>✓ Встроенная панель администратора: живой редактор текстов, модерация отзывов, инбокс</div>
-                <div>✓ Чистый стек без зависимостей: отклик &lt; 0.4s, 100% мобильная адаптивность</div>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Соответствие стандартам законодательства РФ (Минюст, 152-ФЗ)</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Встроенная панель администратора: живой редактор, модерация, инбокс</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Стек без тяжелых зависимостей: отклик &lt; 0.4s, 100% мобильная верстка</span>
+                </div>
               </div>
               <div class="project-footer">
-                <a href="https://glas-dobra-ano.netlify.app" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Перейти на сайт</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                <a href="https://glas-dobra-ano.netlify.app" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>Открыть сайт</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
-                <a href="https://glas-dobra-ano.netlify.app/admin" target="_blank" rel="noopener noreferrer" class="link-btn" style="background: rgba(255,255,255,0.06); margin-left: 8px;">
-                  <span>Панель управления (CMS)</span>
+                <a href="https://glas-dobra-ano.netlify.app/admin" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary">
+                  <span>CMS-панель →</span>
                 </a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- 4. Background Clicker -->
-          <div class="project-card" data-category="automation">
-            <div class="project-img-wrap">
-              <img src="assets/projects/bg-clicker-desktop.png" alt="Background Clicker Desktop App" loading="lazy">
-              <span class="category-badge">Desktop Software</span>
+          <!-- 3. FileBrowser Cloud Suite -->
+          <article class="project-card" data-category="backend automation">
+            <div class="project-media">
+              <img src="assets/projects/enterprise-filebrowser-cloud.png" alt="FileBrowser Cloud Storage" loading="lazy">
+              <span class="project-badge">Cloud & Enterprise</span>
             </div>
-            <div class="project-body">
+            <div class="project-content">
               <div class="project-tags">
-                <span class="tag">Python 3.12</span>
-                <span class="tag">Win32 API</span>
-                <span class="tag">Tkinter GUI</span>
-                <span class="tag">PyInstaller</span>
+                <span class="tech-tag">Golang</span>
+                <span class="tech-tag">Vue 3 / Vite</span>
+                <span class="tech-tag">PDF.js</span>
+                <span class="tech-tag">LibreOffice CLI</span>
+                <span class="tech-tag">Linux / Nginx</span>
+              </div>
+              <h3 class="project-title">FileBrowser Cloud Suite — Корпоративное файловое хранилище</h3>
+              <p class="project-desc">
+                Кастомизация и развертывание защищенного enterprise-хранилища: фоновая headless-конвертация чертежей и офисных документов в PDF, встроенный просмотрщик, аннотации и защищенный шаринг.
+              </p>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Конвертация DOCX/XLSX в PDF на лету через headless LibreOffice</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Встроенный просмотрщик документов и PDF Overlay Editor</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Отказоустойчивое развертывание на Linux с Nginx reverse proxy</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>Обсудить решение</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. AutoCAD.PRO -->
+          <article class="project-card" data-category="web">
+            <div class="project-media">
+              <img src="assets/projects/autocad-pro-landing.png" alt="AutoCAD Landing Page" loading="lazy">
+              <span class="project-badge">Commercial Web</span>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Isometric Design</span>
+                <span class="tech-tag">Conversion UX</span>
+              </div>
+              <h3 class="project-title">AutoCAD.PRO — Очный инженерный курс в Краснодаре</h3>
+              <p class="project-desc">
+                Промо-сайт в строгой эстетике САПР-систем для набора студентов-инженеров: четкая компоновка блоков, визуализация строительных чертежей и плавная адаптивная верстка.
+              </p>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Инженерный Dark UI с акцентной типографикой</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Воронка лидогенерации на пробные занятия</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Мгновенная скорость рендеринга без внешних фреймворков</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>Заказать лендинг</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Background Clicker -->
+          <article class="project-card" data-category="automation">
+            <div class="project-media">
+              <img src="assets/projects/bg-clicker-desktop.png" alt="Background Clicker Desktop App" loading="lazy">
+              <span class="project-badge">Desktop Tool</span>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tech-tag">Python 3.12</span>
+                <span class="tech-tag">Win32 API</span>
+                <span class="tech-tag">Tkinter GUI</span>
+                <span class="tech-tag">PyInstaller</span>
               </div>
               <h3 class="project-title">Background Clicker — Win32 Desktop Automation Tool</h3>
               <p class="project-desc">
                 Десктопная программа с графическим интерфейсом для циклической автоматизации кликов на втором мониторе через низкоуровневые Win32 сообщения без перемещения курсора мыши и без потери фокуса активным окном.
               </p>
-              <div class="project-features">
-                <div>✓ Эмуляция PostMessage без захвата курсора мыши</div>
-                <div>✓ 4 независимых сценария и таймер захвата координат</div>
-                <div>✓ Глобальные хоткеи (Shift+1..4, F12) и портативный .exe</div>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Эмуляция PostMessage без захвата курсора мыши</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>4 независимых сценария и таймер захвата координат</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Глобальные хоткеи и автономный портативный .exe</span>
+                </div>
               </div>
               <div class="project-footer">
-                <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Смотреть код на GitHub</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>GitHub профиль</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- 4. MusicStore Database -->
-          <div class="project-card" data-category="backend">
-            <div class="project-img-wrap">
+          <!-- 6. MusicStore Database -->
+          <article class="project-card" data-category="backend">
+            <div class="project-media">
               <img src="assets/projects/music-shop-database.png" alt="MusicStore PostgreSQL Database" loading="lazy">
-              <span class="category-badge">Database Architecture</span>
+              <span class="project-badge">Database Design</span>
             </div>
-            <div class="project-body">
+            <div class="project-content">
               <div class="project-tags">
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">PL/pgSQL</span>
-                <span class="tag">Database Design (3NF)</span>
-                <span class="tag">Triggers & Procedures</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">PL/pgSQL</span>
+                <span class="tech-tag">3NF Design</span>
+                <span class="tech-tag">Triggers & Backup</span>
               </div>
               <h3 class="project-title">MusicStore Enterprise DB — Реляционная база данных</h3>
               <p class="project-desc">
-                Проектирование и реализация с нуля промышленной СУБД для интернет-магазина: 14 таблиц в 3-й нормальной форме, хранимые процедуры, автоматические триггеры складского учета, аудит и сценарии резервного копирования.
+                Проектирование и реализация промышленной СУБД для интернет-магазина: 14 таблиц в 3-й нормальной форме, хранимые процедуры, автоматические триггеры складского учета, аудит и сценарии резервного копирования.
               </p>
-              <div class="project-features">
-                <div>✓ Нормализованная архитектура 3NF с ограничениями целостности</div>
-                <div>✓ Бизнес-логика на уровне БД (PL/pgSQL триггеры и функции)</div>
-                <div>✓ Автоматизированные бэкапы pg_dump и отказоустойчивость</div>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Нормализованная архитектура 3NF с ограничениями целостности</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Бизнес-логика на уровне БД (PL/pgSQL функции и триггеры)</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Автоматизированные бэкапы pg_dump и отказоустойчивость</span>
+                </div>
               </div>
               <div class="project-footer">
-                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="project-link">
                   <span>Заказать архитектуру БД</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- 5. FileBrowser Cloud -->
-          <div class="project-card" data-category="backend automation">
-            <div class="project-img-wrap">
-              <img src="assets/projects/enterprise-filebrowser-cloud.png" alt="FileBrowser Cloud Storage" loading="lazy">
-              <span class="category-badge">Cloud & DevOps</span>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="tag">Golang</span>
-                <span class="tag">Vue 3 / Vite</span>
-                <span class="tag">PDF.js</span>
-                <span class="tag">LibreOffice CLI</span>
-                <span class="tag">Linux / Nginx</span>
-              </div>
-              <h3 class="project-title">FileBrowser Cloud Suite — Облачное корпоративное хранилище</h3>
-              <p class="project-desc">
-                Кастомизация и развертывание enterprise-хранилища на Linux: фоновая headless-конвертация офисных документов и чертежей в PDF, встроенный просмотрщик, редактор аннотаций, корзина и защищенный шаринг.
-              </p>
-              <div class="project-features">
-                <div>✓ Конвертация DOCX/XLSX в PDF на лету через LibreOffice</div>
-                <div>✓ Встроенный PDF.js просмотрщик и PDF Overlay Editor</div>
-                <div>✓ Деплой на боевой Linux сервер с Nginx и SSL</div>
-              </div>
-              <div class="project-footer">
-                <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Обсудить DevOps & Облака</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 6. Centralny -->
-          <div class="project-card" data-category="web">
-            <div class="project-img-wrap">
+          <!-- 7. Centralny -->
+          <article class="project-card" data-category="web">
+            <div class="project-media">
               <img src="assets/projects/centralny-bar-shop.png" alt="Магазин-бар Центральный" loading="lazy">
-              <span class="category-badge">E-Commerce Web</span>
+              <span class="project-badge">E-Commerce Web</span>
             </div>
-            <div class="project-body">
+            <div class="project-content">
               <div class="project-tags">
-                <span class="tag">HTML5 / CSS3</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">E-Commerce Catalog</span>
-                <span class="tag">Demo Admin</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Product Catalog</span>
+                <span class="tech-tag">Admin Preview</span>
               </div>
               <h3 class="project-title">Магазин-бар «Центральный» в Щёлково</h3>
               <p class="project-desc">
-                Сайт магазина-бара крафтовых напитков и кухни с интерактивным каталогом товаров, демо-админкой для персонала, блоком контактов и кнопкой прокладки маршрута.
+                Сайт магазина-бара крафтовых напитков и кухни с интерактивным каталогом товаров, панелью управления для персонала, контактами и гео-маршрутом.
               </p>
-              <div class="project-features">
-                <div>✓ Интерактивный фильтруемый каталог продукции</div>
-                <div>✓ Демо-панель управления позициями</div>
-                <div>✓ Адаптация под все мобильные устройства</div>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Интерактивный фильтруемый каталог меню и напитков</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Панель управления позициями и гибкая структура</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Полная мобильная оптимизация под экраны смартфонов</span>
+                </div>
               </div>
               <div class="project-footer">
-                <a href="https://github.com/urasokolik/centralny-beer-shop" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <a href="https://github.com/urasokolik/centralny-beer-shop" target="_blank" rel="noopener noreferrer" class="project-link">
                   <span>Репозиторий проекта</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- 7. Epoha Veshchey -->
-          <div class="project-card" data-category="web">
-            <div class="project-img-wrap">
+          <!-- 8. Epoha Veshchey -->
+          <article class="project-card" data-category="web">
+            <div class="project-media">
               <img src="assets/projects/epoha-veshchey-vintage.png" alt="Эпоха вещей СССР" loading="lazy">
-              <span class="category-badge">JAMstack Store</span>
+              <span class="project-badge">JAMstack Catalog</span>
             </div>
-            <div class="project-body">
+            <div class="project-content">
               <div class="project-tags">
-                <span class="tag">HTML5 / CSS3</span>
-                <span class="tag">Netlify CMS</span>
-                <span class="tag">Vintage UI</span>
-                <span class="tag">SEO Friendly</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">Netlify CMS</span>
+                <span class="tech-tag">Vintage Style</span>
+                <span class="tech-tag">SEO Ready</span>
               </div>
               <h3 class="project-title">«Эпоха вещей СССР» — Семейный магазин винтажа</h3>
               <p class="project-desc">
-                Атмосферный интернет-магазин советского антиквариата с админкой Netlify CMS, позволяющей клиенту самостоятельно добавлять новые лоты, редактировать цены и вести блог историй.
+                Тематический интернет-магазин советского антиквариата с админкой Netlify CMS, позволяющей клиенту самостоятельно добавлять новые лоты, менять цены и публиковать заметки.
               </p>
-              <div class="project-features">
-                <div>✓ Уникальный авторский дизайн в стиле советской эстетики</div>
-                <div>✓ Админ-панель Netlify CMS без серверных расходов</div>
-                <div>✓ Каталог с фильтрацией по категориям (хрусталь, фарфор, стекло)</div>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Аутентичный авторский стиль без тяжелых графических библиотек</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Админ-панель Netlify CMS с нулевыми серверными расходами</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Фильтрация предметов по категориям (фарфор, стекло, знаки)</span>
+                </div>
               </div>
               <div class="project-footer">
-                <a href="https://github.com/urasokolik/epoha-veshchey-site" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <a href="https://github.com/urasokolik/epoha-veshchey-site" target="_blank" rel="noopener noreferrer" class="project-link">
                   <span>Репозиторий проекта</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- 8. Lexify -->
-          <div class="project-card" data-category="web">
-            <div class="project-img-wrap">
+          <!-- 9. Lexify -->
+          <article class="project-card" data-category="web">
+            <div class="project-media">
               <img src="assets/projects/lexify-english-school.png" alt="Lexify English School" loading="lazy">
-              <span class="category-badge">Education Landing</span>
+              <span class="project-badge">Education Landing</span>
             </div>
-            <div class="project-body">
+            <div class="project-content">
               <div class="project-tags">
-                <span class="tag">HTML5 / CSS3</span>
-                <span class="tag">Responsive UI</span>
-                <span class="tag">GitHub Pages</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">Responsive UI</span>
+                <span class="tech-tag">GitHub Pages</span>
               </div>
               <h3 class="project-title">Lexify — Онлайн-школа английского языка</h3>
               <p class="project-desc">
-                Адаптивный промо-лендинг для волонтёрской школы английского языка. Мягкая дружелюбная айдентика, интерактивные карточки уровней, презентация преподавателей и форма записи.
+                Адаптивный промо-лендинг для школы английского языка: лаконичная структура блоков, карточки уровней подготовки, презентация преподавателей и форма записи на курс.
               </p>
-              <div class="project-features">
-                <div>✓ Дружелюбный дизайн с пастельными тонами</div>
-                <div>✓ Адаптивная сетка под смартфоны и планшеты</div>
-                <div>✓ Мгновенная загрузка через GitHub Pages</div>
+              <div class="project-specs">
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Чистая типографика и мягкая цветовая схема</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Адаптивная верстка под все типы дисплеев</span>
+                </div>
+                <div class="spec-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Статический хостинг с мгновенным временем отклика</span>
+                </div>
               </div>
               <div class="project-footer">
-                <a href="https://urasokolik.github.io/lexify-landing-page/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>Открыть живой сайт</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                <a href="https://urasokolik.github.io/lexify-landing-page/" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <span>Открыть сайт</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
               </div>
             </div>
-          </div>
+          </article>
 
         </div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Услуги</div>
+          <div class="section-eyebrow">Компетенции</div>
           <h2 class="section-title">Чем я могу помочь вашему бизнесу</h2>
-          <p class="section-subtitle">Полный цикл разработки: от проектирования идеи до запуска и поддержки</p>
+          <p class="section-subtitle">Полный цикл: от проектирования архитектуры до запуска на сервере</p>
         </div>
 
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">📱</div>
+            <div class="service-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
+            </div>
             <h3 class="service-title">Telegram Mini Apps & Боты</h3>
             <p class="service-desc">
-              Разработка Web Apps внутри Telegram на React/Next.js: интернет-магазины, сервисы записи, каталоги, системы лояльности и платежи. Любые сценарии ботов на Python (aiogram) и Node.js.
+              Разработка полноценных веб-приложений внутри Telegram на React/Next.js: интернет-магазины, каталоги, сервисы бронирования, балансовые кабинеты и прием платежей.
             </p>
             <ul class="service-list">
-              <li>Интеграция с ЮKassa, крипто-эквайрингом, СБП</li>
-              <li>Синхронизация с 1С, CRM и внешними API</li>
-              <li>Личные кабинеты и веб-интерфейсы</li>
+              <li>Интеграция ЮKassa, СБП и крипто-эквайринга</li>
+              <li>Синхронизация с CRM, 1C и внешними базами данных</li>
+              <li>Асинхронные боты на Python (aiogram 3.x) и Node.js</li>
             </ul>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">💻</div>
-            <h3 class="service-title">Коммерческие сайты & Лендинги</h3>
+            <div class="service-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="service-title">Коммерческие сайты & CMS</h3>
             <p class="service-desc">
-              Создание современных продающих сайтов, промо-страниц и каталогов. Чистая верстка, быстрая загрузка (&lt;1 сек), идеальная адаптация под мобильные устройства и базовое SEO.
+              Создание быстрых продающих лендингов, корпоративных порталов и каталогов. Чистая верстка, отклик менее 0.4 сек, адаптивность под iOS/Android и базовое SEO.
             </p>
             <ul class="service-list">
-              <li>Высокая конверсия и понятный UX</li>
-              <li>Интеграция админ-панелей для легкого редактирования</li>
-              <li>Подключение аналитики (Яндекс Метрика, GA4)</li>
+              <li>Продуманный UX без перегруженных визуальных эффектов</li>
+              <li>Встраиваемые автономные CMS-панели управления</li>
+              <li>Подключение веб-аналитики и уведомлений в Telegram</li>
             </ul>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">⚡</div>
-            <h3 class="service-title">Автоматизация & Парсинг данных</h3>
+            <div class="service-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            </div>
+            <h3 class="service-title">Автоматизация & Парсинг</h3>
             <p class="service-desc">
-              Автоматизация рутинных задач сотрудника: фоновые кликеры, сбор баз данных, мониторинг цен конкурентов, рассылки и синхронизация таблиц.
+              Избавление от рутинных задач: фоновый сбор данных, мониторинг цен конкурентов, автоматизация рабочих мест и синхронизация отчетов.
             </p>
             <ul class="service-list">
-              <li>Парсинг сайтов и закрытых каталогов (Playwright/API)</li>
-              <li>Десктопные утилиты на Python/Win32</li>
-              <li>Оповещения в Telegram о важных событиях</li>
+              <li>Парсинг закрытых каталогов и API (Playwright, Python)</li>
+              <li>Десктопные утилиты Win32 / Linux для пакетной обработки</li>
+              <li>Автоматические Telegram-оповещения об инцидентах</li>
             </ul>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">🗄️</div>
+            <div class="service-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
             <h3 class="service-title">Бэкенд, Базы данных & DevOps</h3>
             <p class="service-desc">
-              Проектирование надежной серверной архитектуры: проектирование БД PostgreSQL/MySQL, написание REST API, настройка очередей (Redis/BullMQ) и развертывание на Linux-серверах.
+              Проектирование надежного фундамента: архитектура PostgreSQL в 3НФ, разработка REST API, настройка очередей задач и развертывание на Linux-серверах.
             </p>
             <ul class="service-list">
-              <li>Оптимизация сложных SQL-запросов и триггеры</li>
-              <li>Настройка Docker, Nginx, SSL сертификатов</li>
-              <li>Автоматизация бэкапов и мониторинг</li>
+              <li>Оптимизация SQL-запросов, триггеры и хранимые процедуры</li>
+              <li>Контейнеризация Docker, Nginx reverse proxy, SSL</li>
+              <li>Автоматизация резервного копирования и мониторинг аптайма</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Stack Section -->
     <section class="section" id="stack">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Технологии</div>
-          <h2 class="section-title">Стек и инструменты разработки</h2>
-          <p class="section-subtitle">Использую проверенные современные технологии для надежности и скорости</p>
+          <div class="section-eyebrow">Технологический стек</div>
+          <h2 class="section-title">Инструменты разработки</h2>
+          <p class="section-subtitle">Проверенный стек технологий для стабильной работы под нагрузкой</p>
         </div>
 
         <div class="stack-grid">
           <div class="stack-group">
-            <div class="stack-group-title">Frontend & UI</div>
+            <div class="stack-group-title">
+              <span>Frontend & UI</span>
+              <span class="tech-tag">Web</span>
+            </div>
             <div class="stack-items">
-              <span class="tech-pill">Next.js 14</span>
-              <span class="tech-pill">React 18</span>
-              <span class="tech-pill">TypeScript</span>
-              <span class="tech-pill">Vue 3</span>
-              <span class="tech-pill">HTML5 / Modern CSS</span>
-              <span class="tech-pill">Tailwind CSS</span>
-              <span class="tech-pill">Vite</span>
+              <span class="stack-pill">Next.js 14</span>
+              <span class="stack-pill">React 18</span>
+              <span class="stack-pill">TypeScript</span>
+              <span class="stack-pill">Vue 3</span>
+              <span class="stack-pill">Tailwind CSS</span>
+              <span class="stack-pill">HTML5 / Modern CSS</span>
+              <span class="stack-pill">Vite</span>
             </div>
           </div>
 
           <div class="stack-group">
-            <div class="stack-group-title">Backend & APIs</div>
+            <div class="stack-group-title">
+              <span>Backend & APIs</span>
+              <span class="tech-tag">Server</span>
+            </div>
             <div class="stack-items">
-              <span class="tech-pill">Python 3.12</span>
-              <span class="tech-pill">FastAPI / Flask</span>
-              <span class="tech-pill">Node.js</span>
-              <span class="tech-pill">NestJS</span>
-              <span class="tech-pill">Golang</span>
-              <span class="tech-pill">REST & Webhooks</span>
+              <span class="stack-pill">Python 3.12</span>
+              <span class="stack-pill">FastAPI</span>
+              <span class="stack-pill">Node.js</span>
+              <span class="stack-pill">NestJS</span>
+              <span class="stack-pill">Golang</span>
+              <span class="stack-pill">REST & Webhooks</span>
             </div>
           </div>
 
           <div class="stack-group">
-            <div class="stack-group-title">Telegram & Боты</div>
+            <div class="stack-group-title">
+              <span>Telegram Экосистема</span>
+              <span class="tech-tag">Telegram</span>
+            </div>
             <div class="stack-items">
-              <span class="tech-pill">Telegram Mini Apps (TMA)</span>
-              <span class="tech-pill">aiogram 3.x</span>
-              <span class="tech-pill">Telegram Bot API</span>
-              <span class="tech-pill">Telegraf</span>
+              <span class="stack-pill">Telegram Mini Apps (TMA)</span>
+              <span class="stack-pill">aiogram 3.x</span>
+              <span class="stack-pill">Telegram Bot API</span>
+              <span class="stack-pill">Telegraf</span>
             </div>
           </div>
 
           <div class="stack-group">
-            <div class="stack-group-title">Databases & Queues</div>
+            <div class="stack-group-title">
+              <span>Базы данных & Очереди</span>
+              <span class="tech-tag">Storage</span>
+            </div>
             <div class="stack-items">
-              <span class="tech-pill">PostgreSQL</span>
-              <span class="tech-pill">Prisma ORM</span>
-              <span class="tech-pill">Redis</span>
-              <span class="tech-pill">BullMQ</span>
-              <span class="tech-pill">SQLite</span>
-              <span class="tech-pill">SQL Procedures</span>
+              <span class="stack-pill">PostgreSQL</span>
+              <span class="stack-pill">Prisma ORM</span>
+              <span class="stack-pill">Redis</span>
+              <span class="stack-pill">BullMQ</span>
+              <span class="stack-pill">SQLite</span>
+              <span class="stack-pill">PL/pgSQL</span>
             </div>
           </div>
 
           <div class="stack-group">
-            <div class="stack-group-title">DevOps, OS & Payments</div>
+            <div class="stack-group-title">
+              <span>DevOps & Инфраструктура</span>
+              <span class="tech-tag">Ops</span>
+            </div>
             <div class="stack-items">
-              <span class="tech-pill">Docker</span>
-              <span class="tech-pill">Linux (Ubuntu)</span>
-              <span class="tech-pill">Nginx / SSL</span>
-              <span class="tech-pill">Win32 API</span>
-              <span class="tech-pill">ЮKassa API</span>
-              <span class="tech-pill">Git / GitHub</span>
+              <span class="stack-pill">Docker</span>
+              <span class="stack-pill">Linux (Ubuntu/Arch)</span>
+              <span class="stack-pill">Nginx / SSL</span>
+              <span class="stack-pill">Git / GitHub Actions</span>
+              <span class="stack-pill">Netlify CI/CD</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <div class="stack-group-title">
+              <span>Автоматизация & Платежи</span>
+              <span class="tech-tag">Tools</span>
+            </div>
+            <div class="stack-items">
+              <span class="stack-pill">Win32 API</span>
+              <span class="stack-pill">Playwright</span>
+              <span class="stack-pill">ЮKassa API</span>
+              <span class="stack-pill">Asyncio</span>
+              <span class="stack-pill">Tkinter GUI</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Workflow Section -->
     <section class="section" id="workflow">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Прозрачность</div>
+          <div class="section-eyebrow">Процесс</div>
           <h2 class="section-title">Как строится работа</h2>
-          <p class="section-subtitle">Простой и понятный процесс от первого контакта до релиза</p>
+          <p class="section-subtitle">Прозрачные этапы с регулярной демонстрацией промежуточных результатов</p>
         </div>
 
         <div class="steps-grid">
           <div class="step-card">
-            <div class="step-num">01</div>
+            <div class="step-number">01</div>
             <h3 class="step-title">Анализ & ТЗ</h3>
             <p class="step-desc">
-              Обсуждаем вашу задачу, цели и бюджет. Помогаю составить чёткое ТЗ без лишнего оверинжиниринга.
+              Обсуждаем бизнес-задачу, сроки и бюджет. Формирую конкретное ТЗ без лишнего оверинжиниринга.
             </p>
           </div>
 
           <div class="step-card">
-            <div class="step-num">02</div>
+            <div class="step-number">02</div>
             <h3 class="step-title">Прототип & MVP</h3>
             <p class="step-desc">
-              Быстро собираю рабочий прототип или структуру проекта, чтобы вы сразу увидели, как продукт будет работать.
+              Собираю кликабельный каркас или MVP, чтобы вы сразу увидели логику продукта в действии.
             </p>
           </div>
 
           <div class="step-card">
-            <div class="step-num">03</div>
+            <div class="step-number">03</div>
             <h3 class="step-title">Разработка & Тесты</h3>
             <p class="step-desc">
-              Пишу чистый, масштабируемый код, настраиваю БД, подключаю платежи и тестирую на всех устройствах.
+              Пишу надежный типизированный код, проектирую БД, подключаю платежи и тестирую на мобильных устройствах.
             </p>
           </div>
 
           <div class="step-card">
-            <div class="step-num">04</div>
-            <h3 class="step-title">Запуск & Инструкции</h3>
+            <div class="step-number">04</div>
+            <h3 class="step-title">Релиз & Поддержка</h3>
             <p class="step-desc">
-              Разворачиваю проект на сервере, настраиваю домен/SSL, передаю исходники и видео-инструкции по управлению.
+              Развертываю на боевом сервере, подключаю домен и SSL, передаю исходники и видеоинструкцию.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="section" id="contact">
       <div class="container">
-        <div class="contact-box">
-          <div class="contact-badge">Связаться со мной</div>
-          <h2 class="contact-title">Есть проект или идея?<br><span class="gradient-text">Давайте сделаем красиво!</span></h2>
+        <div class="contact-card">
+          <div class="contact-eyebrow">Связь</div>
+          <h2 class="contact-title">Есть проект или задача?<br>Давайте обсудим детали</h2>
           <p class="contact-subtitle">
-            Напишите мне в Telegram — оперативно отвечу, отвечу на технические вопросы и рассчитаю ориентировочные сроки и стоимость.
+            Напишите мне в Telegram — оперативно отвечу, предложу подходящую архитектуру и рассчитаю прозрачную смету и сроки.
           </p>
 
           <div class="contact-actions">
             <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
               <span>Написать в Telegram @Nuar010</span>
             </a>
-            <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>GitHub профиль</span>
+            <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub репозитории</span>
             </a>
           </div>
 
-          <div class="contact-details">
-            <span>Локация: Иркутск / Удаленно</span> · 
-            <span>Telegram: <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer">@Nuar010</a></span> · 
+          <div class="contact-meta">
+            <span>Локация: Братск, Иркутская область (UTC+8)</span>
+            <span>·</span>
+            <span>Telegram: <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer">@Nuar010</a></span>
+            <span>·</span>
             <span>GitHub: <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer">urasokolik</a></span>
           </div>
         </div>
@@ -1361,75 +750,22 @@ body {
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-content">
+    <div class="container footer-inner">
       <div class="footer-left">
-        <span class="logo-text">nuar<span class="accent-dot">.</span>dev</span>
-        <span class="footer-copy">© 2026 Юрий Соколов. Все права защищены.</span>
+        <span class="logo-text">nuar<span class="logo-ext">.dev</span></span>
+        <span>© 2026 Юрий Соколов. Все права защищены.</span>
       </div>
       <div class="footer-links">
-        <a href="#projects">Проекты</a>
-        <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="#top" class="back-to-top">Наверх ↑</a>
+        <a href="#projects" class="footer-link">Проекты</a>
+        <a href="https://github.com/urasokolik" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <a href="https://t.me/Nuar010" target="_blank" rel="noopener noreferrer" class="footer-link">Telegram</a>
+        <a href="#top" class="footer-link">Наверх ↑</a>
       </div>
     </div>
   </footer>
 
-  <script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card");
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const filter = btn.getAttribute("data-filter");
-
-      projectCards.forEach(card => {
-        if (filter === "all") {
-          card.classList.remove("hidden");
-        } else {
-          const categories = card.getAttribute("data-category").split(" ");
-          if (categories.includes(filter)) {
-            card.classList.remove("hidden");
-          } else {
-            card.classList.add("hidden");
-          }
-        }
-      });
-    });
-  });
-
-  const burgerBtn = document.getElementById("burger-btn");
-  const mainNav = document.getElementById("main-nav");
-
-  if (burgerBtn && mainNav) {
-    burgerBtn.addEventListener("click", () => {
-      mainNav.classList.toggle("active");
-    });
-
-    const navLinks = mainNav.querySelectorAll(".nav-link");
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        mainNav.classList.remove("active");
-      });
-    });
-  }
-
-  const header = document.querySelector(".header");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 20) {
-      header.style.borderBottomColor = "rgba(255, 255, 255, 0.15)";
-    } else {
-      header.style.borderBottomColor = "rgba(255, 255, 255, 0.08)";
-    }
-  });
-});
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

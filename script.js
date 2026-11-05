@@ -1,55 +1,89 @@
-// Filter projects by category
+/**
+ * nuar.dev — Portfolio Client Script
+ * Lightweight, zero dependencies, high performance.
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
-  const filterBtns = document.querySelectorAll(".filter-btn");
+  // 1. Apple-style Segmented Control Filter for Projects
+  const filterButtons = document.querySelectorAll(".segment-btn");
   const projectCards = document.querySelectorAll(".project-card");
 
-  filterBtns.forEach(btn => {
+  filterButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      filterBtns.forEach(b => b.classList.remove("active"));
+      // Update active state
+      filterButtons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const filter = btn.getAttribute("data-filter");
+      const filterValue = btn.getAttribute("data-filter");
 
-      projectCards.forEach(card => {
-        if (filter === "all") {
-          card.classList.remove("hidden");
+      projectCards.forEach((card) => {
+        const categories = (card.getAttribute("data-category") || "").split(" ");
+        const shouldShow = filterValue === "all" || categories.includes(filterValue);
+
+        if (shouldShow) {
+          card.classList.remove("is-hidden");
         } else {
-          const categories = card.getAttribute("data-category").split(" ");
-          if (categories.includes(filter)) {
-            card.classList.remove("hidden");
-          } else {
-            card.classList.add("hidden");
-          }
+          card.classList.add("is-hidden");
         }
       });
     });
   });
 
-  // Mobile navigation menu toggle
+  // 2. Mobile Navigation Toggle
   const burgerBtn = document.getElementById("burger-btn");
-  const mainNav = document.getElementById("main-nav");
+  const navMenu = document.getElementById("nav-menu");
 
-  if (burgerBtn && mainNav) {
-    burgerBtn.addEventListener("click", () => {
-      mainNav.classList.toggle("active");
+  if (burgerBtn && navMenu) {
+    const toggleMenu = () => {
+      const isOpen = navMenu.classList.toggle("is-active");
+      burgerBtn.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    burgerBtn.addEventListener("click", toggleMenu);
+
+    // Close on navigation link click
+    navMenu.querySelectorAll(".nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("is-active");
+        burgerBtn.setAttribute("aria-expanded", "false");
+      });
     });
 
-    // Close menu when clicking any nav link
-    const navLinks = mainNav.querySelectorAll(".nav-link");
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        mainNav.classList.remove("active");
-      });
+    // Close on click outside
+    document.addEventListener("click", (e) => {
+      if (
+        navMenu.classList.contains("is-active") &&
+        !navMenu.contains(e.target) &&
+        !burgerBtn.contains(e.target)
+      ) {
+        navMenu.classList.remove("is-active");
+        burgerBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("is-active")) {
+        navMenu.classList.remove("is-active");
+        burgerBtn.setAttribute("aria-expanded", "false");
+      }
     });
   }
 
-  // Header border glow on scroll
+  // 3. Dynamic header hairline on scroll
   const header = document.querySelector(".header");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 20) {
-      header.style.borderBottomColor = "rgba(255, 255, 255, 0.15)";
-    } else {
-      header.style.borderBottomColor = "rgba(255, 255, 255, 0.08)";
-    }
-  });
+  if (header) {
+    const onScroll = () => {
+      if (window.scrollY > 24) {
+        header.style.borderBottomColor = "rgba(255, 255, 255, 0.14)";
+        header.style.background = "rgba(9, 9, 11, 0.88)";
+      } else {
+        header.style.borderBottomColor = "rgba(255, 255, 255, 0.08)";
+        header.style.background = "rgba(9, 9, 11, 0.75)";
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
 });
